@@ -1,4 +1,4 @@
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/69114b9aa610439881a3b4a0237b14b9)](https://www.codacy.com/gh/esMEIproject/gerenciamento-servicos/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=esMEIproject/gerenciamento-servicos&amp;utm_campaign=Badge_Grade) [![Build Status](https://travis-ci.org/esMEIproject/gerenciamento-servicos.svg?branch=main)](https://travis-ci.org/esMEIproject/gerenciamento-servicos)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/69114b9aa610439881a3b4a0237b14b9)](https://www.codacy.com/gh/esMEIproject/gerenciamento-servicos/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=esMEIproject/gerenciamento-servicos&amp;utm_campaign=Badge_Grade) [![Build Status](https://travis-ci.com/esMEIproject/gerenciamento-servicos.svg?branch=main)](https://travis-ci.com/esMEIproject/gerenciamento-servicos)
 # Sistema de Gerenciamento de Serviços para MEI
 ## :octocat: Integrantes
 [Emily S.](https://github.com/eemilyy) | [Gabriel F.](https://github.com/Bielfla27) | [Michel T.](https://github.com/michloliveira)
