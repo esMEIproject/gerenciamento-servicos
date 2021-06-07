@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @ajudante.nome %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @ajudante.cpf %>
+</p>
+
+<p>
+  <strong>Contato:</strong>
+  <%= @ajudante.contato %>
+</p>
+
+<p>
+  <strong>Precomaodeobra:</strong>
+  <%= @ajudante.precoMaoDeObra %>
+</p>
+
+<%= link_to 'Edit', edit_ajudante_path(@ajudante) %> |
+<%= link_to 'Back', ajudantes_path %>

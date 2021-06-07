@@ -1,0 +1,37 @@
+<%= form_with(model: ajudante) do |form| %>
+  <% if ajudante.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ajudante.errors.count, "error") %> prohibited this ajudante from being saved:</h2>
+
+      <ul>
+        <% ajudante.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpf %>
+    <%= form.text_field :cpf %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contato %>
+    <%= form.text_field :contato %>
+  </div>
+
+  <div class="field">
+    <%= form.label :precoMaoDeObra %>
+    <%= form.text_field :precoMaoDeObra %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
