@@ -1,0 +1,2 @@
+class Ajudante < ApplicationRecord
+end
