@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_043613) do
+ActiveRecord::Schema.define(version: 2021_06_07_053638) do
 
   create_table "ajudantes", force: :cascade do |t|
     t.string "nome"
     t.string "cpf"
     t.string "contato"
     t.float "precoMaoDeObra"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "servicos", force: :cascade do |t|
+    t.string "tipoDoServico"
+    t.text "descricao"
+    t.date "data"
+    t.float "valorDoServico"
+    t.boolean "statusDePagamento"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

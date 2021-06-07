@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :servicos
   resources :ajudantes
   resources :usuarios
   root "sessions#new"
