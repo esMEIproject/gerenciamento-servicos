@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_001427) do
+ActiveRecord::Schema.define(version: 2021_06_08_191110) do
 
   create_table "ajudantes", force: :cascade do |t|
     t.string "nome"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_001427) do
     t.string "complemento"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "cliente_id", null: false
+    t.integer "cliente_id"
     t.index ["cliente_id"], name: "index_enderecos_on_cliente_id"
   end
 
@@ -56,16 +56,19 @@ ActiveRecord::Schema.define(version: 2021_06_08_001427) do
     t.boolean "statusDePagamento"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "usuario_id"
+    t.index ["usuario_id"], name: "index_servicos_on_usuario_id"
   end
 
   create_table "usuarios", force: :cascade do |t|
     t.string "nome"
     t.string "cpf"
     t.string "funcao"
-    t.string "senha"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "enderecos", "clientes"
+  add_foreign_key "servicos", "usuarios"
 end
