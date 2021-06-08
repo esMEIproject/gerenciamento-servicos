@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :nome, 'Cliente' %>
+    <%= collection_select(:servico, :cliente_id, Cliente.all, :id, :nome, {:prompt => 'Selecione'}) %>
+  </div>
+
+  <div class="field">
     <%= form.label :tipoDoServico %>
     <%= form.text_field :tipoDoServico %>
   </div>
