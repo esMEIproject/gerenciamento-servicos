@@ -1,3 +1,16 @@
 <h1>Bem vindo!</h1>
 <p>Teste Heroku</p>
 
+<%= form_for :session,url:entrar_path,method: :post do |form|%>
+
+<%= form.label :CPF, 'CPF'%>
+<%= form.text_field :cpf, placeholder: 'CPF'%>
+
+<%= form.label :Senha%>
+<%= form.password_field :password, placeholder: 'Senha'%>
+
+<br><br>
+<%= form.submit 'Entrar'%>
+<%end%>
+<br><br>
+<h3><%= link_to 'Criar Usuário', new_usuario_path %></h3>

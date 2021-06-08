@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :servicos
   resources :ajudantes
   resources :usuarios
+  get 'entrar', to: 'sessions#new'
+  post 'entrar', to: 'session#create'
   
   root "sessions#new"
   #get 'sessions/new'
