@@ -1,9 +1,10 @@
 class ServicosController < ApplicationController
+  before_action :require_logged_in_user
   before_action :set_servico, only: %i[ show edit update destroy ]
 
   # GET /servicos or /servicos.json
   def index
-    @servicos = Servico.all
+    @servicos = current_usuario.servicos
   end
 
   # GET /servicos/1 or /servicos/1.json
@@ -21,7 +22,7 @@ class ServicosController < ApplicationController
 
   # POST /servicos or /servicos.json
   def create
-    @servico = Servico.new(servico_params)
+    @servico = current_usuario.servicos.build(servico_params)
 
     respond_to do |format|
       if @servico.save
@@ -59,7 +60,7 @@ class ServicosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_servico
-      @servico = Servico.find(params[:id])
+      @servico = current_usuario.servicos.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

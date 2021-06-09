@@ -13,6 +13,7 @@ class ClientesController < ApplicationController
   # GET /clientes/new
   def new
     @cliente = Cliente.new
+    @cliente.build_endereco
   end
 
   # GET /clientes/1/edit
@@ -64,6 +65,6 @@ class ClientesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cliente_params
-      params.require(:cliente).permit(:nome, :cpf, :contato)
+      params.require(:cliente).permit(:nome, :cpf, :contato, {:endereco_attributes => [:id, :cidade, :bairro, :logradouro, :complemento]})
     end
 end

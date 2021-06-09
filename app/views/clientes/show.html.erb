@@ -15,5 +15,22 @@
   <%= @cliente.contato %>
 </p>
 
+<p>
+  <strong>Cidade:</strong>
+  <%= @cliente.endereco.cidade %>
+</p>
+<p>
+  <strong>Bairro:</strong>
+  <%= @cliente.endereco.bairro %>
+</p>
+<p>
+  <strong>Logradouro:</strong>
+  <%= @cliente.endereco.logradouro %>
+</p>
+<p>
+  <strong>Complemento:</strong>
+  <%= @cliente.endereco.complemento %>
+</p>
+
 <%= link_to 'Edit', edit_cliente_path(@cliente) %> |
 <%= link_to 'Back', clientes_path %>
