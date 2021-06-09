@@ -64,6 +64,6 @@ class UsuariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def usuario_params
-      params.require(:usuario).permit(:nome, :cpf, :funcao, :senha)
+      params.require(:usuario).permit(:nome, :cpf, :funcao, :password)
     end
 end

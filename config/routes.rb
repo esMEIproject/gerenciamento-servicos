@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :ajudantes
   resources :usuarios
   get 'entrar', to: 'sessions#new'
-  post 'entrar', to: 'session#create'
+  post 'entrar', to: 'sessions#create'
+  delete 'sair', to: 'sessions#destroy'
+  get 'servicos', to: 'servicos#index' #!! 
   
   root "sessions#new"
   #get 'sessions/new'
