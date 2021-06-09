@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Cliente</th>
       <th>Tipodoservico</th>
       <th>Descricao</th>
       <th>Data</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @servicos.each do |servico| %>
       <tr>
+        <td><%= servico.cliente.nome %></td>
         <td><%= servico.tipoDoServico %></td>
         <td><%= servico.descricao %></td>
         <td><%= servico.data %></td>
