@@ -1,3 +1,5 @@
 class Cliente < ApplicationRecord
-    has_one :endereco
+    has_one :endereco, :dependent => :destroy
+
+    accepts_nested_attributes_for :endereco
 end
