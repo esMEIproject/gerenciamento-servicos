@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :clientes
   resources :servicos
   resources :ajudantes
-  resources :usuarios
+  resources :usuarios, only:[:new, :create, :show, :edit, :update, :destroy]
   get 'entrar', to: 'sessions#new'
   post 'entrar', to: 'sessions#create'
   delete 'sair', to: 'sessions#destroy'

@@ -18,11 +18,12 @@
           <li><a href="/clientes">Clientes</a></li>
           <li><a href="/materials">Materiais</a></li>
           <li><a href="#">Ajudantes</a></li>
-          <li><a href="#">Minha conta</a></li>
+          <li><%= link_to 'Minha conta', @current_usuario %></li>      
+
         </ul>
 
         <ul class="ul2">
-          <li><a href="#" id="sairUL">Sair</a></li>
+          <li><%= link_to 'Sair', sair_path, method: :delete%></li>
         </ul>
 
       <% else %>

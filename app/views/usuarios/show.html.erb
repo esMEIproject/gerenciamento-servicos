@@ -18,5 +18,6 @@
 
 <br><br>
 
+<%= link_to 'Voltar', servicos_path %> |
 <%= link_to 'Editar', edit_usuario_path(@usuario), id:"e-#{@usuario.nome}"%> |
-<%= link_to 'Voltar', usuarios_path %>
+<%= link_to 'Apagar Conta', @usuario, method: :delete, id:"d-#{@usuario.nome}" %>

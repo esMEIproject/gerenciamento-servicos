@@ -1,4 +1,5 @@
 class MaterialsController < ApplicationController
+  before_action :require_logged_in_user
   before_action :set_material, only: %i[ show edit update destroy ]
 
   # GET /materials or /materials.json
