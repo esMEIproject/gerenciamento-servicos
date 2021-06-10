@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Bem vindo!</h1>
-<p>Teste Heroku</p>
 
 <%= form_for :session,url:entrar_path,method: :post do |form|%>
 
@@ -12,7 +11,7 @@
 <%= form.password_field :password, placeholder: 'Senha'%>
 
 <br><br>
-<%= form.submit 'Entrar'%>
+<%= form.submit 'Entrar', id:"submit"%>
 <%end%>
 <br><br>
 <h3><%= link_to 'Criar Usuário', new_usuario_path %></h3>
