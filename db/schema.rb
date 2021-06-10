@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(version: 2021_06_08_191110) do
     t.boolean "statusDePagamento"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "cliente_id"
     t.integer "usuario_id"
-    t.index ["usuario_id"], name: "index_servicos_on_usuario_id"
-    t.integer "cliente_id", null: false
     t.index ["cliente_id"], name: "index_servicos_on_cliente_id"
+    t.index ["usuario_id"], name: "index_servicos_on_usuario_id"
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -72,6 +72,6 @@ ActiveRecord::Schema.define(version: 2021_06_08_191110) do
   end
 
   add_foreign_key "enderecos", "clientes"
-  add_foreign_key "servicos", "usuarios"
   add_foreign_key "servicos", "clientes"
+  add_foreign_key "servicos", "usuarios"
 end
