@@ -6,12 +6,12 @@
 </p>
 
 <p>
-  <strong>Tipodoservico:</strong>
+  <strong>Serviço:</strong>
   <%= @servico.tipoDoServico %>
 </p>
 
 <p>
-  <strong>Descricao:</strong>
+  <strong>Descrição:</strong>
   <%= @servico.descricao %>
 </p>
 
@@ -21,14 +21,16 @@
 </p>
 
 <p>
-  <strong>Valordoservico:</strong>
+  <strong>Valor:</strong>
   <%= @servico.valorDoServico %>
 </p>
 
 <p>
-  <strong>Statusdepagamento:</strong>
+  <strong>Status:</strong>
   <%= @servico.statusDePagamento %>
 </p>
 
-<%= link_to 'Edit', edit_servico_path(@servico) %> |
-<%= link_to 'Back', servicos_path %>
+<br><br>
+
+<%= link_to 'Editar', edit_servico_path(@servico) %> |
+<%= link_to 'Voltar', servicos_path %>

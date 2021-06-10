@@ -17,31 +17,31 @@
   </div>
 
   <div class="field">
-    <%= form.label :tipoDoServico %>
+    <%= form.label :tipoDoServico, 'Tipo de Serviço Prestado' %>
     <%= form.text_field :tipoDoServico %>
   </div>
 
   <div class="field">
-    <%= form.label :descricao %>
+    <%= form.label :descricao, 'Descrição do Serviço' %>
     <%= form.text_area :descricao %>
   </div>
 
   <div class="field">
-    <%= form.label :data %>
+    <%= form.label :data, 'Data' %>
     <%= form.date_select :data %>
   </div>
 
   <div class="field">
-    <%= form.label :valorDoServico %>
+    <%= form.label :valorDoServico, 'Valor do Serviço' %>
     <%= form.text_field :valorDoServico %>
   </div>
 
   <div class="field">
-    <%= form.label :statusDePagamento %>
-    <%= form.check_box :statusDePagamento %>
+    <%= form.label :statusDePagamento, 'Status de Pagamento' %>
+    <%= form.check_box :statusDePagamento %>Pago
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit id:'submit' %>
   </div>
 <% end %>
