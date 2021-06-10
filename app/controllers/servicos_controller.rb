@@ -65,6 +65,6 @@ class ServicosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def servico_params
-      params.require(:servico).permit(:tipoDoServico, :descricao, :data, :valorDoServico, :statusDePagamento, :cliente_id)
+      params.require(:servico).permit(:tipoDoServico, :descricao, :data, :valorDoServico, :statusDePagamento, :cliente_id, :ajudante_id, :material_id)
     end
 end

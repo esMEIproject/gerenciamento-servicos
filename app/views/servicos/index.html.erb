@@ -8,6 +8,7 @@
       <th>Cliente</th>
       <th>Tipodoservico</th>
       <th>Descricao</th>
+      <th>Ajudante</th>
       <th>Data</th>
       <th>Valordoservico</th>
       <th>Statusdepagamento</th>
@@ -21,6 +22,12 @@
         <td><%= servico.cliente.nome %></td>
         <td><%= servico.tipoDoServico %></td>
         <td><%= servico.descricao %></td>
+        <% if servico.ajudante != nil %>
+          <td><%= servico.ajudante.nome %></td>
+          <% else %>
+          <td><%= 'não possue' %></td>
+        <% end %>
+      
         <td><%= servico.data %></td>
         <td><%= servico.valorDoServico %></td>
         <td><%= servico.statusDePagamento %></td>

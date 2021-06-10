@@ -27,6 +27,16 @@
   </div>
 
   <div class="field">
+    <%= form.label :ajudante%>
+    <%= form.collection_select(:ajudante_id, Ajudante.all, :id, :nome, {:prompt => 'Selecione'}) %>          
+  </div>
+
+  <div class="field">
+    <%= form.label :Materias%>
+    <%= form.collection_select(:material_id, Material.all, :id, :nome, {:prompt => 'Selecione'}) %>          
+  </div>
+
+  <div class="field">
     <%= form.label :data %>
     <%= form.date_select(:data, :start_year => 2021, :end_year => 2023) %>
   </div>
