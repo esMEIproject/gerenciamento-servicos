@@ -12,45 +12,45 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :nome %>
+    <%= form.label :nome, "Nome" %>
     <%= form.text_field :nome %>
   </div>
 
   <div class="field">
-    <%= form.label :cpf %>
+    <%= form.label :cpf, "CPF" %>
     <%= form.text_field :cpf %>
   </div>
 
   <div class="field">
-    <%= form.label :contato %>
+    <%= form.label :contato, "Contato" %>
     <%= form.text_field :contato %>
   </div>
 
   <%= form.fields_for :endereco do |e| %>
 
     <div class="field">
-      <%= e.label :cidade %>
+      <%= e.label :cidade, "Cidade"%>
       <%= e.text_field :cidade %>
     </div>
 
     <div class="field">
-      <%= e.label :bairro %>
+      <%= e.label :bairro, "Bairro"%>
       <%= e.text_field :bairro %>
     </div>
 
     <div class="field">
-      <%= e.label :lougradouro %>
+      <%= e.label :lougradouro, "Logradouro" %>
       <%= e.text_field :logradouro %>
     </div>
 
     <div class="field">
-      <%= e.label :complemento %>
+      <%= e.label :complemento, "Complemento"%>
       <%= e.text_field :complemento %>
     </div>
 
   <% end %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit id:"submit" %>
   </div>
 <% end %>

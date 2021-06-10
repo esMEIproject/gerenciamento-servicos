@@ -6,7 +6,7 @@
 </p>
 
 <p>
-  <strong>Cpf:</strong>
+  <strong>CPF:</strong>
   <%= @cliente.cpf %>
 </p>
 
@@ -32,5 +32,7 @@
   <%= @cliente.endereco.complemento %>
 </p>
 
-<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
-<%= link_to 'Back', clientes_path %>
+<br><br>
+
+<%= link_to 'Editar Cliente', edit_cliente_path(@cliente) %> |
+<%= link_to 'Voltar', clientes_path %>
