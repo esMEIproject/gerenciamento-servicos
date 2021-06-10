@@ -8,7 +8,10 @@
       <th>Nome</th>
       <th>CPF</th>
       <th>Contato</th>
-      <th colspan="3"></th>
+      <th>Cidade</th>
+      <th>Bairro</th>
+      <th>Logradouro</th>
+      <th>Complemento</th>
     </tr>
   </thead>
 
@@ -18,7 +21,11 @@
         <td><%= cliente.nome %></td>
         <td><%= cliente.cpf %></td>
         <td><%= cliente.contato %></td>
-        <td><%= link_to 'Vizualizar', cliente, id:"s-#{cliente.nome}" %></td>
+        <td><%= cliente.endereco.cidade %></td>
+        <td><%= cliente.endereco.bairro %></td>
+        <td><%= cliente.endereco.logradouro %></td>
+        <td><%= cliente.endereco.complemento %></td>
+        <td><%= link_to 'Visualizar', cliente, id:"s-#{cliente.nome}" %></td>
         <td><%= link_to 'Editar', edit_cliente_path(cliente), id:"e-#{cliente.nome}" %></td>
         <td><%= link_to 'Apagar', cliente, method: :delete, id:"d-#{cliente.nome}" %></td>
       </tr>

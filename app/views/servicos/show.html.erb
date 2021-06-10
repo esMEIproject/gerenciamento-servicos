@@ -27,7 +27,11 @@
 
 <p>
   <strong>Status:</strong>
-  <%= @servico.statusDePagamento %>
+  <% if @servico.statusDePagamento == true%>
+    <%= "Pago" %>
+  <% else %>
+    <%= "Não Pago"%>
+  <% end %>
 </p>
 
 <br><br>
