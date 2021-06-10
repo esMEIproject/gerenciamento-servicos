@@ -1,4 +1,5 @@
 class AjudantesController < ApplicationController
+  before_action :require_logged_in_user
   before_action :set_ajudante, only: %i[ show edit update destroy ]
 
   # GET /ajudantes or /ajudantes.json
