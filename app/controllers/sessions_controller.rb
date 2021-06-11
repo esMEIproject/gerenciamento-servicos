@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     #renderiza a view
-    redirect_to usuario_path(current_usuario) if usuario_signed_in?
+    redirect_to servicos_path if usuario_signed_in?
   end
 
   def create

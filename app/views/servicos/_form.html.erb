@@ -17,23 +17,23 @@
   </div>
 
   <div class="field">
-    <%= form.label :tipoDoServico %>
+    <%= form.label :tipoDoServico, 'Tipo de Serviço Prestado' %>
     <%= form.text_field :tipoDoServico %>
   </div>
 
   <div class="field">
-    <%= form.label :descricao %>
+    <%= form.label :descricao, 'Descrição do Serviço' %>
     <%= form.text_area :descricao %>
   </div>
 
   <div class="field">
-    <%= form.label :ajudante%>
-    <%= form.collection_select(:ajudante_id, Ajudante.all, :id, :nome, {:prompt => 'Não possue'}) %>          
+    <%= form.label :ajudante, 'Ajudante' %>
+    <%= form.collection_select(:ajudante_id, Ajudante.all, :id, :nome, {:prompt => 'Não possui'}) %>          
   </div>
 
   <div class="field">
-    <%= form.label :Materias%>
-    <%= form.collection_select(:material_id, Material.all, :id, :nome, {:prompt => 'Não possue'}) %>          
+    <%= form.label :material, 'Material' %>
+    <%= form.collection_select(:material_id, Material.all, :id, :nome, {:prompt => 'Não possui'}) %>          
   </div>
 
   <div class="field">
@@ -42,16 +42,16 @@
   </div>
 
   <div class="field">
-    <%= form.label :valorDoServico %>
+    <%= form.label :valorDoServico, 'Valor do Serviço' %>
     <%= form.text_field :valorDoServico %>
   </div>
 
   <div class="field">
-    <%= form.label :statusDePagamento %>
-    <%= form.check_box :statusDePagamento %>
+    <%= form.label :statusDePagamento, 'Status de Pagamento' %>
+    <%= form.check_box :statusDePagamento %>Pago
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit id:'submit' %>
   </div>
 <% end %>

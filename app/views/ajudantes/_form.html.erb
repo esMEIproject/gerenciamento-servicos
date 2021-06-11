@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :nome %>
+    <%= form.label :nome, "Nome do Ajundante" %>
     <%= form.text_field :nome %>
   </div>
 
   <div class="field">
-    <%= form.label :cpf %>
-    <%= form.text_field :cpf %>
+    <%= form.label :cpf, "CPF" %>
+    <%= form.text_field :cpf, placeholder:"Apenas números" %>
   </div>
 
   <div class="field">
-    <%= form.label :contato %>
+    <%= form.label :contato, "Contato" %>
     <%= form.text_field :contato %>
   </div>
 
   <div class="field">
-    <%= form.label :precoMaoDeObra %>
+    <%= form.label :precoMaoDeObra, "Preço da mão de obra" %>
     <%= form.text_field :precoMaoDeObra %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit id:"submit" %>
   </div>
 <% end %>

@@ -1,4 +1,5 @@
 class AjudantesController < ApplicationController
+  before_action :require_logged_in_user
   before_action :set_ajudante, only: %i[ show edit update destroy ]
 
   # GET /ajudantes or /ajudantes.json
@@ -25,7 +26,7 @@ class AjudantesController < ApplicationController
 
     respond_to do |format|
       if @ajudante.save
-        format.html { redirect_to @ajudante, notice: "Ajudante was successfully created." }
+        format.html { redirect_to @ajudante, notice: "Ajudante foi criado com sucesso." }
         format.json { render :show, status: :created, location: @ajudante }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,7 @@ class AjudantesController < ApplicationController
   def update
     respond_to do |format|
       if @ajudante.update(ajudante_params)
-        format.html { redirect_to @ajudante, notice: "Ajudante was successfully updated." }
+        format.html { redirect_to @ajudante, notice: "Ajudante foi atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @ajudante }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +52,7 @@ class AjudantesController < ApplicationController
   def destroy
     @ajudante.destroy
     respond_to do |format|
-      format.html { redirect_to ajudantes_url, notice: "Ajudante was successfully destroyed." }
+      format.html { redirect_to ajudantes_url, notice: "Ajudante foi apagado com sucesso." }
       format.json { head :no_content }
     end
   end

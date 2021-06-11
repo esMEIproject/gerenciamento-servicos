@@ -1,24 +1,23 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>Nome:</strong>
   <%= @usuario.nome %>
 </p>
 
 <p>
-  <strong>Cpf:</strong>
+  <strong>CPF:</strong>
   <%= @usuario.cpf %>
 </p>
 
 <p>
-  <strong>Funcao:</strong>
+  <strong>Função/Cargo:</strong>
   <%= @usuario.funcao %>
 </p>
 
-<p>
-  <strong>Senha:</strong>
-  <%= @usuario.password %>
-</p>
+<br><br>
 
-<%= link_to 'Edit', edit_usuario_path(@usuario) %> |
-<%= link_to 'Back', usuarios_path %>
+<%= link_to 'Voltar', servicos_path %> |
+<%= link_to 'Editar', edit_usuario_path(@usuario), id:"e-#{@usuario.nome}"%> |
+<%= link_to 'Apagar Conta', @usuario, method: :delete, id:"d-#{@usuario.nome}" %>

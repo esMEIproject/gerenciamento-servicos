@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Servicos</h1>
+<h1>Serviços</h1>
 
 <table>
   <thead>
     <tr>
       <th>Cliente</th>
-      <th>Tipodoservico</th>
+      <th>Serviço</th>
       <th>Descricao</th>
       <th>Ajudante</th>
       <th>Material</th>
       <th>Data</th>
-      <th>Valordoservico</th>
-      <th>Statusdepagamento</th>
-      <th colspan="3"></th>
+      <th>Valor</th>
+      <th>Status</th>
+      
     </tr>
   </thead>
 
@@ -35,10 +35,14 @@
         <% end %> 
         <td><%= servico.data %></td>
         <td><%= servico.valorDoServico %></td>
-        <td><%= servico.statusDePagamento %></td>
-        <td><%= link_to 'Show', servico %></td>
-        <td><%= link_to 'Edit', edit_servico_path(servico) %></td>
-        <td><%= link_to 'Destroy', servico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if servico.statusDePagamento == true %>
+          <td style="color:green"><%= "Pago" %></td>
+        <% else %>
+          <td style="color:red"><%= "Não Pago" %></td>
+        <% end %>
+        <td><%= link_to 'Visualizar', servico, id:"s-#{servico.cliente.nome + servico.tipoDoServico}" %></td>
+        <td><%= link_to 'Editar', edit_servico_path(servico), id:"e-#{servico.cliente.nome + servico.tipoDoServico}" %></td>
+        <td><%= link_to 'Apagar', servico, method: :delete, id:"d-#{servico.cliente.nome + servico.tipoDoServico}" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,5 +50,4 @@
 
 <br>
 
-<%= link_to 'New Servico', new_servico_path %>
-<%= link_to 'Logout', sair_path, method: :delete%>
+<%= link_to 'Novo Serviço', new_servico_path, id:"novo_servico"%>

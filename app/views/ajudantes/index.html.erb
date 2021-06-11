@@ -6,10 +6,9 @@
   <thead>
     <tr>
       <th>Nome</th>
-      <th>Cpf</th>
+      <th>CPF</th>
       <th>Contato</th>
-      <th>Precomaodeobra</th>
-      <th colspan="3"></th>
+      <th>Preço da mão de obra</th>
     </tr>
   </thead>
 
@@ -20,14 +19,14 @@
         <td><%= ajudante.cpf %></td>
         <td><%= ajudante.contato %></td>
         <td><%= ajudante.precoMaoDeObra %></td>
-        <td><%= link_to 'Show', ajudante %></td>
-        <td><%= link_to 'Edit', edit_ajudante_path(ajudante) %></td>
-        <td><%= link_to 'Destroy', ajudante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Visualizar', ajudante, id:"s-#{ajudante.nome}" %></td>
+        <td><%= link_to 'Editar', edit_ajudante_path(ajudante), id:"e-#{ajudante.nome}" %></td>
+        <td><%= link_to 'Apagar', ajudante, method: :delete, id:"d-#{ajudante.nome}" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<br><br>
 
-<%= link_to 'New Ajudante', new_ajudante_path %>
+<%= link_to 'Novo Ajudante', new_ajudante_path, id:"novo_ajudante" %>

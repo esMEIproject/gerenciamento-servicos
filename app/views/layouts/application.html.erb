@@ -12,10 +12,24 @@
 
   <body>
     <nav>
-      <a href="/">Login</a>
-      <a href="/materials">Materiais</a>
-      <a href="/clientes">Clientes</a>
-      <a href="/servicos">Servicos</a>
+      <% if usuario_signed_in? %>
+        <ul class="ul1">
+          <li><a href="/servicos">Servicos</a></li>
+          <li><a href="/clientes">Clientes</a></li>
+          <li><a href="/materials">Materiais</a></li>
+          <li><a href="/ajudantes">Ajudantes</a></li>
+          <li><%= link_to 'Minha conta', @current_usuario %></li>      
+
+        </ul>
+
+        <ul class="ul2">
+          <li><%= link_to 'Sair', sair_path, method: :delete%></li>
+        </ul>
+
+      <% else %>
+        <a href="/">Login</a>
+      <% end %>
+
     </nav>
 
     <div>
