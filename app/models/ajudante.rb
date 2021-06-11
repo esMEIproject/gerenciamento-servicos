@@ -1,5 +1,5 @@
 class Ajudante < ApplicationRecord
-    has_many :servicos
+    has_many :servicos, :dependent => :nullify
     belongs_to :usuario
 
     validates :nome, presence: true, length: {minimum:8}, numericality: false
