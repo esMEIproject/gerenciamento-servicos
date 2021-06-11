@@ -1,17 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Bem vindo!</h1>
+<h1>Sistema de Gerenciamento de Serviços MEI</h1>
 
 <%= form_for :session,url:entrar_path,method: :post do |form|%>
+    <% flash.each do |message_type, message| %>
+        <%= content_tag 'div', role: 'alert' do %>
+        <% if flash[:danger]%>
+            <p style="color:red"><%= message %></p>
+        <% else %>
+            <p style="color:green"><%= message %></p>
+        <% end %>
+       <% end %>
+     <% end %>
 
-<%= form.label :CPF, 'CPF'%>
-<%= form.text_field :cpf, placeholder: 'CPF'%>
+    <%= form.label :CPF, 'CPF'%>
+    <%= form.text_field :cpf, placeholder: 'CPF'%>
 
-<%= form.label :Senha%>
-<%= form.password_field :password, placeholder: 'Senha'%>
+    <%= form.label :Senha%>
+    <%= form.password_field :password, placeholder: 'Senha'%>
 
-<br><br>
-<%= form.submit 'Entrar', id:"submit"%>
+    <br><br>
+    <%= form.submit 'Entrar', id:"submit"%>
+
 <%end%>
+
 <br><br>
 <h3><%= link_to 'Criar Usuário', new_usuario_path %></h3>
