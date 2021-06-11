@@ -4,10 +4,10 @@ one:
   nome: MyString
   cpf: MyString
   funcao: MyString
-  senha: MyString
+  password_digest: MyString
 
 two:
   nome: MyString
   cpf: MyString
   funcao: MyString
-  senha: MyString
+  password_digest: MyString
