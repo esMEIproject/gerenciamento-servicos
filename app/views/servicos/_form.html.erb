@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :material, 'Material' %>
-    <%= form.collection_select(:material_id, Material.all, :id, :nome, {:prompt => 'Não possui'}) %>          
+    <%= form.collection_select(:material_id, Material.where(usuario_id: current_usuario.id), :id, :nome, {:prompt => 'Não possui'}) %>          
   </div>
 
   <div class="field">
