@@ -17,7 +17,7 @@ class UsuariosTest < ApplicationSystemTestCase
     fill_in "Cpf", with: @usuario.cpf
     fill_in "Funcao", with: @usuario.funcao
     fill_in "Nome", with: @usuario.nome
-    fill_in "Senha", with: @usuario.senha
+    fill_in "Password", with: @usuario.password
     click_on "Create Usuario"
 
     assert_text "Usuario was successfully created"
@@ -31,7 +31,7 @@ class UsuariosTest < ApplicationSystemTestCase
     fill_in "Cpf", with: @usuario.cpf
     fill_in "Funcao", with: @usuario.funcao
     fill_in "Nome", with: @usuario.nome
-    fill_in "Senha", with: @usuario.senha
+    fill_in "Password", with: @usuario.password
     click_on "Update Usuario"
 
     assert_text "Usuario was successfully updated"
