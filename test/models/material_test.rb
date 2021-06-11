@@ -15,7 +15,8 @@ class MaterialTest < ActiveSupport::TestCase
 
     material = Material.new nome: 'Massa de Chocolate',
       descricao: 'Chocolate meio amargo sem lactose',
-      valor: '0'      
+      valor: '0',
+      usuario_id: usuario.id    
 
     assert_not material.save
   end
@@ -30,7 +31,8 @@ class MaterialTest < ActiveSupport::TestCase
 
     material = Material.new nome: 'Massa de Chocolate',
       descricao: 'Chocolate meio amargo sem lactose',
-      valor: '40'        
+      valor: '40',
+      usuario_id: usuario.id       
 
     assert material.save
   end
@@ -45,7 +47,8 @@ class MaterialTest < ActiveSupport::TestCase
 
     material = Material.new nome: 'Massa de Chocolate',
       descricao: 'Ch',
-      valor: '40'          
+      valor: '40',
+      usuario_id: usuario.id         
 
     assert_not material.save
   end

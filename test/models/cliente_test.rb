@@ -19,7 +19,8 @@ class ClienteTest < ActiveSupport::TestCase
       endereco_attributes:{ cidade: 'Garanhuns',
         bairro: 'Boa Vista',
         logradouro: 'Rua Doze, numero 15',
-        complemento: 'Apartamento 112'}
+        complemento: 'Apartamento 112'},
+      usuario_id: usuario.id
 
     assert cliente.save
   end
@@ -38,8 +39,8 @@ class ClienteTest < ActiveSupport::TestCase
       endereco_attributes:{ cidade: 'Garanhuns',
         bairro: 'Boa Vista',
         logradouro: 'Rua Doze, numero 15',
-        complemento: 'Apartamento 112'}
-            
+        complemento: 'Apartamento 112'},
+      usuario_id: usuario.id           
 
     assert_not cliente.save
   end
