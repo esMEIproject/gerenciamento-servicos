@@ -4,7 +4,7 @@ class MaterialsController < ApplicationController
 
   # GET /materials or /materials.json
   def index
-    @materials = Material.all
+    @materials = current_usuario.materials
   end
 
   # GET /materials/1 or /materials/1.json
@@ -22,7 +22,7 @@ class MaterialsController < ApplicationController
 
   # POST /materials or /materials.json
   def create
-    @material = Material.new(material_params)
+    @material = current_usuario.materials.build(material_params)
 
     respond_to do |format|
       if @material.save
@@ -60,7 +60,7 @@ class MaterialsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_material
-      @material = Material.find(params[:id])
+      @material = current_usuario.materials.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

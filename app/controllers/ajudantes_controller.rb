@@ -4,7 +4,7 @@ class AjudantesController < ApplicationController
 
   # GET /ajudantes or /ajudantes.json
   def index
-    @ajudantes = Ajudante.all
+    @ajudantes = current_usuario.ajudantes
   end
 
   # GET /ajudantes/1 or /ajudantes/1.json
@@ -22,7 +22,7 @@ class AjudantesController < ApplicationController
 
   # POST /ajudantes or /ajudantes.json
   def create
-    @ajudante = Ajudante.new(ajudante_params)
+    @ajudante = current_usuario.ajudantes.build(ajudante_params)
 
     respond_to do |format|
       if @ajudante.save
@@ -60,11 +60,11 @@ class AjudantesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ajudante
-      @ajudante = Ajudante.find(params[:id])
+      @ajudante = current_usuario.ajudantes.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def ajudante_params
-      params.require(:ajudante).permit(:nome, :cpf, :contato, :precoMaoDeObra)
+      params.require(:ajudante).permit(:nome, :cpf, :contato, :precoMaoDeObra, :usuario_id)
     end
 end
