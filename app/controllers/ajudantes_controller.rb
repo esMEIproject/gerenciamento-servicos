@@ -22,7 +22,6 @@ class AjudantesController < ApplicationController
 
   # POST /ajudantes or /ajudantes.json
   def create
-    @ajudante = Ajudante.new(ajudante_params)
     @ajudante = current_usuario.ajudantes.build(ajudante_params)
 
     respond_to do |format|
@@ -66,6 +65,6 @@ class AjudantesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ajudante_params
-      params.require(:ajudante).permit(:nome, :cpf, :contato, :precoMaoDeObra)
+      params.require(:ajudante).permit(:nome, :cpf, :contato, :precoMaoDeObra, :usuario_id)
     end
 end
