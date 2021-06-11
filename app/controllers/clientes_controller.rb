@@ -4,7 +4,7 @@ class ClientesController < ApplicationController
 
   # GET /clientes or /clientes.json
   def index
-    @clientes = Cliente.all
+    @clientes = current_usuario.clientes
   end
 
   # GET /clientes/1 or /clientes/1.json
@@ -23,7 +23,7 @@ class ClientesController < ApplicationController
 
   # POST /clientes or /clientes.json
   def create
-    @cliente = Cliente.new(cliente_params)
+    @cliente = current_usuario.clientes.build(cliente_params)
 
     respond_to do |format|
       if @cliente.save
@@ -61,11 +61,11 @@ class ClientesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cliente
-      @cliente = Cliente.find(params[:id])
+      @cliente = current_usuario.clientes.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def cliente_params
-      params.require(:cliente).permit(:nome, :cpf, :contato, {:endereco_attributes => [:id, :cidade, :bairro, :logradouro, :complemento]})
+      params.require(:cliente).permit(:nome, :cpf, :contato, {:endereco_attributes => [:id, :cidade, :bairro, :logradouro, :complemento]}, :usuario_id)
     end
 end

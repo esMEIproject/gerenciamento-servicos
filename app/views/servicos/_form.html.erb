@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :nome, 'Cliente' %>
-    <%= collection_select(:servico, :cliente_id, Cliente.all, :id, :nome, {:prompt => 'Selecione'}) %>
+    <%= collection_select(:servico, :cliente_id, Cliente.where(usuario_id: current_usuario.id), :id, :nome, {:prompt => 'Selecione'}) %>
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :ajudante, 'Ajudante' %>
-    <%= form.collection_select(:ajudante_id, Ajudante.all, :id, :nome, {:prompt => 'Não possui'}) %>          
+    <%= form.collection_select(:ajudante_id, Ajudante.where(usuario_id: current_usuario.id), :id, :nome, {:prompt => 'Não possui'}) %>          
   </div>
 
   <div class="field">
