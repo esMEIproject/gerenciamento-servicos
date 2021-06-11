@@ -16,6 +16,24 @@
 </p>
 
 <p>
+  <strong>Ajudante:</strong>
+  <% if @servico.ajudante != nil %>
+    <td><%= @servico.ajudante.nome %></td>
+    <% else %>
+    <td><%= 'não possue' %></td>
+  <% end %>
+<p>
+
+<p>
+  <strong>Material:</strong>
+  <% if @servico.material != nil %>
+    <td><%= @servico.material.nome %></td>
+    <% else %>
+    <td><%= 'não possue' %></td>
+  <% end %>
+<p>
+
+<p>
   <strong>Data:</strong>
   <%= @servico.data %>
 </p>
