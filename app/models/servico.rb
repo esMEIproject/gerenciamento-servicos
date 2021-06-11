@@ -7,6 +7,7 @@ class Servico < ApplicationRecord
 
     validates :tipoDoServico, presence: true, length: {minimum:8}
     validates :descricao, presence: true, length: {minimum:8}
-    validates :valorDoServico, presence: true, length: {minimum:1}
+    validates_date :data, on_or_after: -> (_lambda){Date.current}
+    validates :valorDoServico, presence: true, numericality: {only_float:true, greater_than: 100}
 
 end

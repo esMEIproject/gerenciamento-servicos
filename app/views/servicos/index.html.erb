@@ -25,13 +25,13 @@
         <td><%= servico.descricao %></td>
         <% if servico.ajudante_id != nil %>
           <td><%= servico.ajudante.nome %></td>
-          <% else %>
-          <td><%= 'não possue' %></td>
+        <% else %>
+          <td><%= 'Não possui' %></td>
         <% end %>
         <% if servico.material != nil %>
           <td><%= servico.material.nome %></td>
-          <% else %>
-          <td><%= 'não possue' %></td>
+        <% else %>
+          <td><%= 'Não possui' %></td>
         <% end %> 
         <td><%= servico.data %></td>
         <td><%= servico.valorDoServico %></td>

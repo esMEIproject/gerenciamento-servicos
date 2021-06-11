@@ -1,5 +1,5 @@
 class Usuario < ApplicationRecord
-    has_many :servicos
+    has_many :servicos, :dependent => :destroy
     has_secure_password
     
     validates :nome, presence: true, length: {minimum:10}, numericality: false
