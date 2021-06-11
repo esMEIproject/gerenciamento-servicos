@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :ajudante%>
-    <%= form.collection_select(:ajudante_id, Ajudante.all, :id, :nome, {:prompt => 'Selecione'}) %>          
+    <%= form.collection_select(:ajudante_id, Ajudante.all, :id, :nome, {:prompt => 'Não possue'}) %>          
   </div>
 
   <div class="field">
     <%= form.label :Materias%>
-    <%= form.collection_select(:material_id, Material.all, :id, :nome, {:prompt => 'Selecione'}) %>          
+    <%= form.collection_select(:material_id, Material.all, :id, :nome, {:prompt => 'Não possue'}) %>          
   </div>
 
   <div class="field">
