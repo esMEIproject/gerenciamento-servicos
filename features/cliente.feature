@@ -10,5 +10,5 @@ Scenario: Cadastrar novo cliente
   And clico em novo cliente
   When eu preencho os campos com nome 'Fulano da Silva', CPF '00000000000', contato '952136988', cidade 'Garanhuns', bairro 'Boa Vista', logradouro 'Rua da Doze' e complemento 'Numero 123'
   And eu clico em cadastrar cliente
-  Then eu vejo uma mensagem informando que 'Cliente foi criado com sucesso'
+  Then eu vejo uma mensagem informando que o cliente foi criado com sucesso
   

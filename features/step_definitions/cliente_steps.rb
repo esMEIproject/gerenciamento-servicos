@@ -35,4 +35,8 @@ end
 And ('eu clico em cadastrar cliente') do
     click_on 'submit'
 end
+
+Then('eu vejo uma mensagem informando que o cliente foi criado com sucesso') do
+    expect(page).to have_content('Cliente foi criado com sucesso')
+end
    
