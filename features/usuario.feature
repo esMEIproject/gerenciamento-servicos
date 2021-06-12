@@ -15,4 +15,12 @@ Scenario: Cadastrar novo usuario com campo nome vazio
   And eu clico para cadastrar um novo usuario
   When eu preencho os campos de nome '', CPF-CNPJ '12345678999', funcao 'Gesseiro' e senha 'password' 
   And eu clico em cadastrar usuario
-  Then eu vejo uma mensagem de erro informando que 'O campo Nome não pode ser vazio'
+  Then eu vejo uma mensagem de erro informando que "Nome can't be blank"
+
+Scenario: Cadastrar novo usuario com campo CPF invalido
+  Given eu estou na pagina de login
+  And eu clico para cadastrar um novo usuario
+  When eu preencho os campos de nome 'usuario001', CPF-CNPJ 'A1334345601', funcao 'Gesseiro' e senha 'password' 
+  And eu clico em cadastrar usuario
+  Then eu vejo uma mensagem de erro informando que 'Cpf is not a number'
+  
