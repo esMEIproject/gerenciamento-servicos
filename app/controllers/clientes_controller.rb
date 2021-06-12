@@ -51,11 +51,15 @@ class ClientesController < ApplicationController
 
   # DELETE /clientes/1 or /clientes/1.json
   def destroy
-    @cliente.destroy
     respond_to do |format|
+    if @cliente.destroy
       format.html { redirect_to clientes_url, notice: "Cliente foi apagado com sucesso." }
       format.json { head :no_content }
+    else
+      format.html { redirect_to clientes_url, notice: "Cliente não pode ser apagado pois está em um ou mais Serviços" }
     end
+  end
+
   end
 
   private
