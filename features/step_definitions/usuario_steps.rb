@@ -21,5 +21,8 @@ Then('eu vejo uma mensagem informando que {string}') do |mensagem|
     expect(page).to have_content(mensagem)
 end
 
+Then('eu vejo uma mensagem de erro informando que {string}') do |mensagem|
+    expect(page).to have_content("Nome can't be blank")
+end
   
   
