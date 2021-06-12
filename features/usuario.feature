@@ -15,14 +15,14 @@ Scenario: Cadastrar novo usuario com campo nome vazio
   And eu clico para cadastrar um novo usuario
   When eu preencho os campos de nome '', CPF-CNPJ '12345678999', funcao 'Gesseiro' e senha 'password' 
   And eu clico em cadastrar usuario
-  Then eu vejo uma mensagem de erro informando que "Nome can't be blank"
+  Then eu vejo uma mensagem de erro informando que 'Nome não pode ficar em branco'
 
 Scenario: Cadastrar novo usuario com campo CPF invalido
   Given eu estou na pagina de login
   And eu clico para cadastrar um novo usuario
   When eu preencho os campos de nome 'usuario001', CPF-CNPJ 'A1334345601', funcao 'Gesseiro' e senha 'password' 
   And eu clico em cadastrar usuario
-  Then eu vejo uma mensagem de erro informando que 'Cpf is not a number'
+  Then eu vejo uma mensagem de erro informando que 'Cpf deve ser um número'
 
 Scenario: Cadastrar novo usuario com campo CPF-CNPJ ja existente
   Given eu estou na pagina de login
@@ -30,7 +30,7 @@ Scenario: Cadastrar novo usuario com campo CPF-CNPJ ja existente
   When eu clico para cadastrar um novo usuario
   And eu preencho os campos de nome 'usuario002', CPF-CNPJ '12345678999', funcao 'Gesseiro' e senha 'password'
   When eu clico em cadastrar usuario
-  Then eu vejo uma mensagem de erro informando que 'Cpf has already been taken'
+  Then eu vejo uma mensagem de erro informando que 'Cpf informado já existe'
 
 Scenario: Editar Usuario com campo CPF-CNPJ vazio
   Given eu estou na pagina de login
@@ -40,4 +40,4 @@ Scenario: Editar Usuario com campo CPF-CNPJ vazio
   And eu clico em editar
   When eu preencho o campo CPF-CNPJ ''
   And eu clico e atualizar usuario
-  Then eu vejo uma mensagem de erro informando que 'Cpf is the wrong length (should be 11 characters)'
+  Then eu vejo uma mensagem de erro informando que 'Cpf não possui o tamanho esperado (11 caracteres)'
