@@ -1,7 +1,7 @@
 <%= form_with(model: ajudante) do |form| %>
   <% if ajudante.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(ajudante.errors.count, "error") %> prohibited this ajudante from being saved:</h2>
+      <h2><%= pluralize(ajudante.errors.count, "erros") %> foram encontrados:</h2>
 
       <ul>
         <% ajudante.errors.each do |error| %>
