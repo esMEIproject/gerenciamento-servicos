@@ -3,7 +3,7 @@ Given('eu estou na pagina de login') do
 end
 
 And('eu clico para cadastrar um novo usuario') do
-    click_on 'Criar Usuário'
+    click_on 'criar_usuario'
 end
 
 When('eu preencho os campos de nome {string}, CPF-CNPJ {string}, funcao {string} e senha {string}') do |nome, cpf, funcao, senha|
@@ -56,4 +56,3 @@ end
 And('eu clico e atualizar usuario') do
     click_on 'submit'
 end
-  
