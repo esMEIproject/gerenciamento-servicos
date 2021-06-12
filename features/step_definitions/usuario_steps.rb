@@ -34,5 +34,26 @@ end
 Then('eu vejo uma mensagem de erro informando que {string}') do |mensagem|
     expect(page).to have_content(mensagem)
 end
-  
+
+Given('eu estou logado no sistema com o CPF-CNPJ {string} e senha {string}') do |cpf, senha|
+    fill_in 'session_cpf',	    with: cpf
+    fill_in 'session_password',	with: senha
+    click_on 'submit'
+end
+
+And('eu clico em minha conta') do
+    click_on 'minha_conta'
+end
+
+And('eu clico em editar') do
+    click_on 'editar_usuario'
+end
+
+When('eu preencho o campo CPF-CNPJ {string}') do |cpf|
+    fill_in 'usuario_cpf',	    with: cpf
+end
+
+And('eu clico e atualizar usuario') do
+    click_on 'submit'
+end
   
