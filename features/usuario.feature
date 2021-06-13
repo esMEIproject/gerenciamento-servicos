@@ -6,38 +6,38 @@ Feature: Usuario
 Scenario: Cadastrar novo usuario
   Given eu estou na pagina de login
   And eu clico para cadastrar um novo usuario
-  When eu preencho os campos de nome 'Fulano da Silva', CPF-CNPJ '12345678999', funcao 'Gesseiro' e senha 'password'
+  When eu preencho os campos de nome 'Fulano da Silva', cpf '12345678999', funcao 'Gesseiro' e senha 'password'
   And eu clico em cadastrar usuario
-  Then eu vejo uma mensagem informando que 'Usuário foi criado com sucesso.'
+  Then eu vejo uma mensagem que usuario foi cadastrado corretamente
 
 Scenario: Cadastrar novo usuario com campo nome vazio
   Given eu estou na pagina de login
   And eu clico para cadastrar um novo usuario
-  When eu preencho os campos de nome '', CPF-CNPJ '12345678999', funcao 'Gesseiro' e senha 'password' 
+  When eu preencho os campos de nome '', cpf '12345678999', funcao 'Gesseiro' e senha 'password' 
   And eu clico em cadastrar usuario
-  Then eu vejo uma mensagem de erro informando que 'Nome não pode ficar em branco'
+  Then eu vejo uma mensagem de usuario invalido
 
-Scenario: Cadastrar novo usuario com campo CPF invalido
+Scenario: Cadastrar novo usuario com campo cpf contendo letras
   Given eu estou na pagina de login
   And eu clico para cadastrar um novo usuario
-  When eu preencho os campos de nome 'usuario001', CPF-CNPJ 'A1334345601', funcao 'Gesseiro' e senha 'password' 
+  When eu preencho os campos de nome 'usuario001', cpf 'A1334345601', funcao 'Gesseiro' e senha 'password' 
   And eu clico em cadastrar usuario
-  Then eu vejo uma mensagem de erro informando que 'Cpf deve ser um número'
+  Then eu vejo uma mensagem de usuario invalido
 
-Scenario: Cadastrar novo usuario com campo CPF-CNPJ ja existente
+Scenario: Cadastrar novo usuario com campo cpf ja existente
   Given eu estou na pagina de login
-  And existe um usuario cadastrado com o nome 'usuario001', CPF-CNPJ '12345678999', funcao 'Gesseiro' e senha 'password'
+  And existe um usuario cadastrado com o nome 'usuario001', cpf '12345678999', funcao 'Gesseiro' e senha 'password'
   When eu clico para cadastrar um novo usuario
-  And eu preencho os campos de nome 'usuario002', CPF-CNPJ '12345678999', funcao 'Gesseiro' e senha 'password'
+  And eu preencho os campos de nome 'usuario002', cpf '12345678999', funcao 'Gesseiro' e senha 'password'
   When eu clico em cadastrar usuario
-  Then eu vejo uma mensagem de erro informando que 'Cpf informado já existe'
+  Then eu vejo uma mensagem de usuario invalido
 
-Scenario: Editar Usuario com campo CPF-CNPJ vazio
+Scenario: Editar Usuario com campo cpf vazio
   Given eu estou na pagina de login
-  And existe um usuario cadastrado com o nome 'usuario001', CPF-CNPJ '12345678999', funcao 'Gesseiro' e senha 'password'
-  And eu estou logado no sistema com o CPF-CNPJ '12345678999' e senha 'password'
-  And eu clico em minha conta
+  And existe um usuario cadastrado com o nome 'usuario001', cpf '12345678999', funcao 'Gesseiro' e senha 'password'
+  And eu estou logado no sistema com o cpf '12345678999' e senha 'password'
+  And eu clico em visualizar minha conta
   And eu clico em editar
-  When eu preencho o campo CPF-CNPJ ''
-  And eu clico e atualizar usuario
-  Then eu vejo uma mensagem de erro informando que 'Cpf não possui o tamanho esperado (11 caracteres)'
+  When eu preencho o campo cpf '' e senha 'password'
+  And eu clico em atualizar usuario
+  Then eu vejo uma mensagem de usuario invalido
