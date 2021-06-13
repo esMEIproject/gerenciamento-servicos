@@ -39,4 +39,7 @@ end
 Then('eu vejo uma mensagem informando que o cliente foi criado com sucesso') do
     expect(page).to have_content('Cliente foi criado com sucesso')
 end
+Then('eu vejo uma mensagem de erro informando que o nome nao pode ficar em branco') do
+    expect(page).to have_content('Nome não pode ficar em branco')
+end  
    
