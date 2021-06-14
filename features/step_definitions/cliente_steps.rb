@@ -1,4 +1,4 @@
-Given('existe um usuario com o nome {string}, cpf {string}, funcao {string} e senha {string}') do |nome, cpf, funcao, senha|
+Given('existe um usuario cadastrado com o nome {string}, cpf {string}, funcao {string} e senha {string}') do |nome, cpf, funcao, senha|
     visit '/entrar'
     click_on 'Criar Usuário'
     fill_in 'usuario_nome',	with: nome

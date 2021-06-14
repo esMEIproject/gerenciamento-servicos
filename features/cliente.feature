@@ -4,7 +4,7 @@ Feature: Cliente
   So that eu nao tenha que fazer isso manualmente
 
 Scenario: Cadastrar novo cliente
-  Given existe um usuario com o nome 'usuario001', cpf '12345678999', funcao 'Gesseiro' e senha 'password'
+  Given existe um usuario cadastrado com o nome 'usuario001', cpf '12345678999', funcao 'Gesseiro' e senha 'password'
   And estou logado no sistema com o login '12345678999' e senha 'password'
   When eu entro na pagina clientes
   And clico em novo cliente
@@ -13,7 +13,7 @@ Scenario: Cadastrar novo cliente
   Then eu vejo uma mensagem informando que o cliente foi criado com sucesso
 
 Scenario: Cadastrar Novo Cliente com campo Nome vazio
-  Given existe um usuario com o nome 'usuario001', cpf '12345678999', funcao 'Gesseiro' e senha 'password' 
+  Given existe um usuario cadastrado com o nome 'usuario001', cpf '12345678999', funcao 'Gesseiro' e senha 'password' 
   And estou logado no sistema com o login '12345678999' e senha 'password'
   When eu entro na pagina clientes
   And clico em novo cliente
@@ -22,7 +22,7 @@ Scenario: Cadastrar Novo Cliente com campo Nome vazio
   Then eu vejo uma mensagem de erro informando que o nome nao pode ficar em branco
 
 Scenario: Cadastrar Novo Cliente com cpf ja cadastrado
-  Given existe um usuario com o nome 'usuario001', cpf '12345678999', funcao 'Gesseiro' e senha 'password'
+  Given existe um usuario cadastrado com o nome 'usuario001', cpf '12345678999', funcao 'Gesseiro' e senha 'password'
   And estou logado no sistema com o login '12345678999' e senha 'password'
   When eu entro na pagina clientes
   And existe um cliente com nome 'Cliente001', cpf '12312312345', contato '996439788', cidade 'Garanhuns', bairro 'Boa Vista', logradouro 'Rua da Doze' e complemento 'Numero 123'
@@ -32,7 +32,7 @@ Scenario: Cadastrar Novo Cliente com cpf ja cadastrado
   Then eu vejo uma mensagem de erro informando que o cpf ja existe
 
 Scenario: Editar cliente
-  Given existe um usuario com o nome 'usuario001', cpf '12345678999', funcao 'Gesseiro' e senha 'password' 
+  Given existe um usuario cadastrado com o nome 'usuario001', cpf '12345678999', funcao 'Gesseiro' e senha 'password' 
   And estou logado no sistema com o login '12345678999' e senha 'password'
   When eu entro na pagina clientes
   And existe um cliente com nome 'Cliente001', cpf '12312312345', contato '996439788', cidade 'Garanhuns', bairro 'Boa Vista', logradouro 'Rua da Doze' e complemento 'Numero 123'
@@ -42,7 +42,7 @@ Scenario: Editar cliente
   Then eu vejo uma mensagem informando que o cliente foi atualizado
 
 Scenario: Apagar cliente
-  Given existe um usuario com o nome 'usuario001', cpf '12345678999', funcao 'Gesseiro' e senha 'password' 
+  Given existe um usuario cadastrado com o nome 'usuario001', cpf '12345678999', funcao 'Gesseiro' e senha 'password' 
   And estou logado no sistema com o login '12345678999' e senha 'password'
   When eu entro na pagina clientes
   And existe um cliente com nome 'Cliente001', cpf '12312312345', contato '996439788', cidade 'Garanhuns', bairro 'Boa Vista', logradouro 'Rua da Doze' e complemento 'Numero 123'
