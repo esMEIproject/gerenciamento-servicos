@@ -17,3 +17,10 @@ script:
   - rails test test/models/material_test.rb
   - rails test test/models/cliente_test.rb
   - rails test test/models/usuario_test.rb
+  - rails test test/models/servico_test.rb
+  - rails test test/models/ajudante_test.rb
+  - rails test test/models/endereco_test.rb
+  - bundle exec cucumber
+
+services:
+  - postgresql
