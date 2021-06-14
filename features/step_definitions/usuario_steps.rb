@@ -6,11 +6,11 @@ And('eu clico para cadastrar um novo usuario') do
     click_on 'criar_usuario'
 end
 
-When('eu preencho os campos de nome {string}, CPF-CNPJ {string}, funcao {string} e senha {string}') do |nome, cpf, funcao, senha|
+When('eu preencho os campos de nome {string}, cpf {string}, funcao {string} e senha {string}') do |nome, cpf, funcao, senha|
     fill_in 'usuario_nome',	with: nome
-    fill_in 'usuario_cpf',	    with: cpf
-    fill_in 'usuario_funcao',	with: funcao
-    fill_in 'usuario_password',	with: senha
+    fill_in 'usuario_cpf', with: cpf
+    fill_in 'usuario_funcao', with: funcao
+    fill_in 'usuario_password', with: senha
 end
 
 And('eu clico em cadastrar usuario') do
@@ -20,28 +20,27 @@ end
 Given('existe um usuario com o nome {string}, CPF-CNPJ {string}, funcao {string} e senha {string}') do |nome, cpf, funcao, senha|
     click_on 'Criar Usuário'
     fill_in 'usuario_nome',	with: nome
-    fill_in 'usuario_cpf',	    with: cpf
-    fill_in 'usuario_funcao',	with: funcao
+    fill_in 'usuario_cpf', with: cpf
+    fill_in 'usuario_funcao', with: funcao
     fill_in 'usuario_password',	with: senha
     click_on 'submit'
-  end
-  
+end  
 
-Then('eu vejo uma mensagem informando que {string}') do |mensagem|
-    expect(page).to have_content(mensagem)
+Then('eu vejo uma mensagem que usuario foi cadastrado corretamente') do
+    expect(page).to have_content('Usuário foi criado com sucesso.')
 end
 
-Then('eu vejo uma mensagem de erro informando que {string}') do |mensagem|
-    expect(page).to have_content(mensagem)
+Then('eu vejo uma mensagem de usuario invalido') do
+    assert_selector('div#error_explanation')
 end
 
-Given('eu estou logado no sistema com o CPF-CNPJ {string} e senha {string}') do |cpf, senha|
+Given('eu estou logado no sistema com o cpf {string} e senha {string}') do |cpf, senha|
     fill_in 'session_cpf',	    with: cpf
     fill_in 'session_password',	with: senha
     click_on 'submit'
 end
 
-And('eu clico em minha conta') do
+And('eu clico em visualizar minha conta') do
     click_on 'minha_conta'
 end
 
@@ -49,10 +48,11 @@ And('eu clico em editar') do
     click_on 'editar_usuario'
 end
 
-When('eu preencho o campo CPF-CNPJ {string}') do |cpf|
-    fill_in 'usuario_cpf',	    with: cpf
+When('eu preencho o campo cpf {string} e senha {string}') do |cpf, senha|
+    fill_in 'usuario_cpf', with: cpf
+    fill_in 'usuario_password', with: senha
 end
 
-And('eu clico e atualizar usuario') do
+And('eu clico em atualizar usuario') do
     click_on 'submit'
 end
