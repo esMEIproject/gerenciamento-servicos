@@ -26,7 +26,7 @@ Scenario: Cadastrar novo usuario com campo CPF invalido
 
 Scenario: Cadastrar novo usuario com campo CPF-CNPJ ja existente
   Given eu estou na pagina de login
-  And existe um usuario cadastrado com o nome 'usuario001', CPF-CNPJ '12345678999', funcao 'Gesseiro' e senha 'password'
+  And existe um usuario com o nome 'usuario001', CPF-CNPJ '12345678999', funcao 'Gesseiro' e senha 'password'
   When eu clico para cadastrar um novo usuario
   And eu preencho os campos de nome 'usuario002', CPF-CNPJ '12345678999', funcao 'Gesseiro' e senha 'password'
   When eu clico em cadastrar usuario
@@ -34,7 +34,7 @@ Scenario: Cadastrar novo usuario com campo CPF-CNPJ ja existente
 
 Scenario: Editar Usuario com campo CPF-CNPJ vazio
   Given eu estou na pagina de login
-  And existe um usuario cadastrado com o nome 'usuario001', CPF-CNPJ '12345678999', funcao 'Gesseiro' e senha 'password'
+  And existe um usuario com o nome 'usuario001', CPF-CNPJ '12345678999', funcao 'Gesseiro' e senha 'password'
   And eu estou logado no sistema com o CPF-CNPJ '12345678999' e senha 'password'
   And eu clico em minha conta
   And eu clico em editar
