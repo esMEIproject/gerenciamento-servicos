@@ -22,4 +22,3 @@ O cliente deve ser capaz de fazer o cadastramento dos seus dados pessoais, tais 
 Em andamento
 ## :keyboard: Acessando o sistema
 Você poderá fazer Login no sistema com o CPF *12345678900* e Senha *admin@2021*
-
