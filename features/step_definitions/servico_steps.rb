@@ -72,3 +72,54 @@ Then ('eu vejo que o servico foi criado com sucesso') do
 end
 
 
+Then ('eu vejo uma mensagem informando que cliente deve existir') do
+    expect(page).to have_content('Cliente deve existir!')
+end
+
+Then ('eu vejo mensagem informando que data deve ser depois ou durante o dia atual') do
+    expect(page).to have_content('Data deve ser depois ou durante o dia atual')
+end
+
+And ('existe o servico com cliente {string}, tipo de servico {string}, descricao do servico {string}, seleciono o ajudante {string}, o material {string}, a data {string} de {string} de {string}, valor do servico {string} e status de pagamento {string}') do |cliente, tipoServico, descricao, ajudante, material, dia, mes, ano, preco, status|
+    visit '/servicos'
+    click_on 'novo_servico'
+    select cliente, :from => 'servico_cliente_id'
+    fill_in 'servico_tipoDoServico', with: tipoServico
+    fill_in 'servico_descricao', with: descricao
+    select ajudante, :from => 'servico_ajudante_id'
+    select material, :from => 'servico_material_id'
+    select dia, :from => 'servico_data_3i'
+    select mes, :from => 'servico_data_2i'
+    select ano, :from => 'servico_data_1i'
+    fill_in 'servico_valorDoServico', with: preco
+    if status == 'Pago'
+        check 'servico_statusDePagamento'
+    end
+    click_on 'submit'
+    visit '/servicos'
+end
+
+When('eu clico em apagar o servico {string} do cliente {string}') do |tipoServico, cliente|
+    click_link "d-#{cliente + tipoServico}"
+end
+
+When('eu clico em editar o servico {string} do cliente {string}') do |tipoServico, cliente|
+    click_link "e-#{cliente + tipoServico}"
+end
+
+And('eu renomeio o tipo de servico para {string}') do |tipoServico|
+    fill_in 'servico_tipoDoServico', with: tipoServico
+end
+
+When('eu clico em atualizar servico') do 
+    click_on 'submit'
+end
+
+Then ('eu vejo que o servico foi atualizado com sucesso') do
+    expect(page).to have_content('Serviço foi atualizado com sucesso')
+end
+
+Then('eu vejo que o servico {string} nao se encontra mais na pagina') do |tipoServico|
+    expect(page).to have_no_content(tipoServico)
+end
+
