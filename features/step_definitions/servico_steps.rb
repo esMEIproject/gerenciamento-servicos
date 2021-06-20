@@ -76,6 +76,10 @@ Then ('eu vejo uma mensagem informando que cliente deve existir') do
     expect(page).to have_content('Cliente deve existir!')
 end
 
+Then ('eu vejo mensagem informando que data deve ser depois ou durante o dia atual') do
+    expect(page).to have_content('Data deve ser depois ou durante o dia atual')
+end
+
 And ('existe o servico com cliente {string}, tipo de servico {string}, descricao do servico {string}, seleciono o ajudante {string}, o material {string}, a data {string} de {string} de {string}, valor do servico {string} e status de pagamento {string}') do |cliente, tipoServico, descricao, ajudante, material, dia, mes, ano, preco, status|
     visit '/servicos'
     click_on 'novo_servico'
@@ -118,3 +122,4 @@ end
 Then('eu vejo que o servico {string} nao se encontra mais na pagina') do |tipoServico|
     expect(page).to have_no_content(tipoServico)
 end
+

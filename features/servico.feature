@@ -43,3 +43,13 @@ Scenario: Apagar Servico
   And existe o servico com cliente 'Marcelo Santos', tipo de servico 'Instalação de tomadas', descricao do servico 'Instalação das tomadas no quarto', seleciono o ajudante 'Carlos Antonio', o material 'Kit de Tomadas', a data '10' de 'Agosto' de '2021', valor do servico '500' e status de pagamento 'Pago'
   When eu clico em apagar o servico 'Instalação de tomadas' do cliente 'Marcelo Santos'
   Then eu vejo que o servico 'Instalação de tomadas' nao se encontra mais na pagina
+
+Scenario: Cadastrar Novo Servico com data invalida
+  Given um usuario cadastrado com o nome 'João da Silva', cpf '83943415430', funcao 'Eletricista' e senha 'password' existe
+  And eu estou no sistema com o cpf '83943415430' e senha 'password'
+  And existe um cliente com o nome de 'Marcelo Santos', cpf '33823282409', contato '45121245', cidade 'Garanhuns', bairro 'Boa Vista', logradouro 'Rua Dez', complemento 'Apartamento 123'
+  And existe um ajudante com o nome de 'Carlos Antonio', cpf '60081585470', contato '996325411' e preco da mao de obra '120'
+  And um material existe com o nome 'Kit de Tomadas', descricao 'Tomadas brancas 220V de 3 pinos' e preco '15'
+  When eu clico em novo servico
+  And eu seleciono o cliente 'Marcelo Santos', tipo de servico 'Instalação de tomadas', descricao do servico 'Instalação das tomadas no quarto', seleciono o ajudante 'Carlos Antonio', o material 'Kit de Tomadas', a data '10' de 'Abril' de '2021', valor do servico '500' e status de pagamento 'Pago'
+  Then eu vejo mensagem informando que data deve ser depois ou durante o dia atual
