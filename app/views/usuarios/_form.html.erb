@@ -18,7 +18,8 @@
 
   <div class="field">
     <%= form.label :cpf, "CPF" %>
-    <%= form.text_field :cpf, placeholder:"Apenas números" %>
+    <%= form.text_field :cpf, placeholder:"xxx.xxx.xxx-xx", id:"cpf" %>
+    <%= javascript_pack_tag 'cpf'%>
   </div>
 
   <div class="field">

@@ -12,7 +12,8 @@
      <% end %>
 
     <%= form.label :cpf, 'CPF'%>
-    <%= form.text_field :cpf, placeholder: 'CPF'%>
+    <%= form.text_field :cpf, placeholder: 'CPF', id:"cpf"%>
+    <%= javascript_pack_tag 'cpf'%>
 
     <%= form.label :password%>
     <%= form.password_field :password, placeholder: 'Senha'%>
