@@ -95,6 +95,10 @@ And ('existe o servico com cliente {string}, tipo de servico {string}, descricao
     visit '/servicos'
 end
 
+When('eu clico em apagar o servico {string} do cliente {string}') do |tipoServico, cliente|
+    click_link "d-#{cliente + tipoServico}"
+end
+
 When('eu clico em editar o servico {string} do cliente {string}') do |tipoServico, cliente|
     click_link "e-#{cliente + tipoServico}"
 end
@@ -109,4 +113,8 @@ end
 
 Then ('eu vejo que o servico foi atualizado com sucesso') do
     expect(page).to have_content('Serviço foi atualizado com sucesso')
+end
+
+Then('eu vejo que o servico {string} nao se encontra mais na pagina') do |tipoServico|
+    expect(page).to have_no_content(tipoServico)
 end
