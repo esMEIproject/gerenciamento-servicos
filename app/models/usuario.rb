@@ -6,7 +6,8 @@ class Usuario < ApplicationRecord
     
     
     validates :nome, presence: true, length: {minimum:8}, numericality: false
-    validates :cpf,  presence: true, uniqueness: {:message => 'informado já existe.'}, length: {is: 11}, numericality: {only_integer: true}
+    validates_cpf_format_of :cpf
+    validates :cpf, uniqueness: true
     validates :funcao, presence: true, length: {minimum: 5}
     validates :password, presence: true, length: {minimum: 8}
     has_secure_password
