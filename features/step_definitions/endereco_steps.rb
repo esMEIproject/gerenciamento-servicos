@@ -1,14 +1,14 @@
 Given ('um usuario no sistema com nome {string}, cpf {string}, funcao {string} e senha {string} existe') do |nome, cpf, funcao, senha|
     visit '/usuarios/new'
     fill_in 'usuario_nome',	with: nome
-    fill_in 'usuario_cpf', with: cpf
+    fill_in 'cpf', with: cpf
     fill_in 'usuario_funcao', with: funcao
     fill_in 'usuario_password',	with: senha
     click_on 'submit'
 end
 
 And ('estou logado como usuario com cpf {string} e senha {string}') do |cpf, senha|
-    fill_in 'session_cpf',	    with: cpf
+    fill_in 'cpf',	    with: cpf
     fill_in 'session_password',	with: senha
     click_on 'submit'
 end
@@ -23,7 +23,7 @@ end
 
 When ('eu preencho nome {string}, cpf {string}, contato {string}') do |nome, cpf, contato|
     fill_in 'cliente_nome', with: nome
-    fill_in 'cliente_cpf', with: cpf
+    fill_in 'cpf', with: cpf
     fill_in 'cliente_contato', with: contato
 end
 
@@ -53,7 +53,7 @@ end
 And ('existe um cliente cadastrado como nome {string}, cpf {string}, contato {string}, cidade {string}, bairro {string}, logradouro {string} e complemento {string}') do |nome, cpf, contato, cidade, bairro, logradouro, complemento|
     click_on 'novo_cliente'
     fill_in 'cliente_nome', with: nome
-    fill_in 'cliente_cpf', with: cpf
+    fill_in 'cpf', with: cpf
     fill_in 'cliente_contato', with: contato
     fill_in 'cliente_endereco_attributes_cidade',	with: cidade
     fill_in 'cliente_endereco_attributes_bairro',	with: bairro
