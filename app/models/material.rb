@@ -4,5 +4,5 @@ class Material < ApplicationRecord
 
     validates :nome, presence: true, length: {in:4..35}, numericality: false
     validates :descricao, presence: true, length: {in:8..50}, numericality: false
-    validates :valor, presence: true, numericality: {only_float:true, greater_than: 10}    
+    validates :valor, presence: true, numericality: {only_float:true, greater_than_or_equal_to: 1.0, less_than_or_equal_to: 100000.0}    
 end
