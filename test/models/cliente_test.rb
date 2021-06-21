@@ -7,14 +7,14 @@ class ClienteTest < ActiveSupport::TestCase
 
   test "deve salvar Cliente cadastrado corretamente" do
     usuario = Usuario.new nome: 'Usuario Teste',
-      cpf: '12345678912',
+      cpf: '39775387485',
       funcao: 'Confeiteiro',
       password: 'password1'
 
       usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste 1',
-      cpf: '11111111111',
+      cpf: '37287511460',
       contato: '45214521',
       endereco_attributes:{ cidade: 'Garanhuns',
         bairro: 'Boa Vista',
@@ -27,14 +27,14 @@ class ClienteTest < ActiveSupport::TestCase
 
   test "nao deve salvar Cliente cadastrado com campo contato contendo letras" do
     usuario = Usuario.new nome: 'Usuario Teste',
-      cpf: '12345678912',
+      cpf: '39775387485',
       funcao: 'Confeiteiro',
       password: 'password1'
 
       usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste 1',
-      cpf: '11111111111',
+      cpf: '37287511460',
       contato: '4521abcd',
       endereco_attributes:{ cidade: 'Garanhuns',
         bairro: 'Boa Vista',
@@ -47,14 +47,14 @@ class ClienteTest < ActiveSupport::TestCase
 
   test "nao deve salvar Cliente cadastrado com campo cpf contendo numeros a mais" do
     usuario = Usuario.new nome: 'Usuario Teste',
-      cpf: '12345678912',
+      cpf: '39775387485',
       funcao: 'Confeiteiro',
       password: 'password1'
 
       usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste 1',
-      cpf: '1111111111123',
+      cpf: '372875114603',
       contato: '45214521',
       endereco_attributes:{ cidade: 'Garanhuns',
         bairro: 'Boa Vista',

@@ -2,14 +2,14 @@ Given('existe um usuario cadastrado com o nome {string}, CPF {string}, funcao {s
     visit '/entrar'
     click_on 'Criar Usuário'
     fill_in 'usuario_nome',	with: nome
-    fill_in 'usuario_cpf',	    with: cpf
+    fill_in 'cpf',	    with: cpf
     fill_in 'usuario_funcao',	with: funcao
     fill_in 'usuario_password',	with: senha
     click_on 'submit'
 end
 
 Given('estou logado no sistema com o login {string} e senha {string}') do |cpf, senha|
-    fill_in 'session_cpf',	    with: cpf
+    fill_in 'cpf',	    with: cpf
     fill_in 'session_password',	with: senha
     click_on 'submit'
 end
@@ -24,7 +24,7 @@ end
 
 When('eu preencho os campos com nome {string}, cpf {string}, contato {string}, cidade {string}, bairro {string}, logradouro {string} e complemento {string}') do |nome, cpf, contato, cidade, bairro, logradouro, complemento|
     fill_in 'cliente_nome',	with: nome
-    fill_in 'cliente_cpf',	with: cpf
+    fill_in 'cpf',	with: cpf
     fill_in 'cliente_contato',	with: contato
     fill_in 'cliente_endereco_attributes_cidade',	with: cidade
     fill_in 'cliente_endereco_attributes_bairro',	with: bairro
@@ -45,7 +45,7 @@ end
 And('existe um cliente com nome {string}, cpf {string}, contato {string}, cidade {string}, bairro {string}, logradouro {string} e complemento {string}') do |nome, cpf, contato, cidade, bairro, logradouro, complemento|
     click_on 'novo_cliente'
     fill_in 'cliente_nome',	with: nome
-    fill_in 'cliente_cpf',	with: cpf
+    fill_in 'cpf',	with: cpf
     fill_in 'cliente_contato',	with: contato
     fill_in 'cliente_endereco_attributes_cidade',	with: cidade
     fill_in 'cliente_endereco_attributes_bairro',	with: bairro
@@ -59,7 +59,7 @@ When('clico em editar cliente com o nome {string}') do |cliente|
 end
 And('edito os dados com nome {string}, cpf {string}, contato {string}, cidade {string}, bairro {string}, logradouro {string} e complemento {string}') do |nome, cpf, contato, cidade, bairro, logradouro, complemento|                                                                                                                    
     fill_in 'cliente_nome',	with: nome
-    fill_in 'cliente_cpf',	with: cpf
+    fill_in 'cpf',	with: cpf
     fill_in 'cliente_contato',	with: contato
     fill_in 'cliente_endereco_attributes_cidade',	with: cidade
     fill_in 'cliente_endereco_attributes_bairro',	with: bairro

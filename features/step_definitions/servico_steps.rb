@@ -2,14 +2,14 @@ Given ('um usuario cadastrado com o nome {string}, cpf {string}, funcao {string}
     visit '/usuarios/new'
     #click_on 'criar_usuario'
     fill_in 'usuario_nome',	with: nome
-    fill_in 'usuario_cpf', with: cpf
+    fill_in 'cpf', with: cpf
     fill_in 'usuario_funcao', with: funcao
     fill_in 'usuario_password',	with: senha
     click_on 'submit'
 end
 
 And ('eu estou no sistema com o cpf {string} e senha {string}') do |cpf, senha|
-    fill_in 'session_cpf',	    with: cpf
+    fill_in 'cpf',	    with: cpf
     fill_in 'session_password',	with: senha
     click_on 'submit'
 end
@@ -18,7 +18,7 @@ And ('existe um cliente com o nome de {string}, cpf {string}, contato {string}, 
     click_on 'clientes'
     click_on 'novo_cliente'
     fill_in 'cliente_nome', with: nomeCliente
-    fill_in 'cliente_cpf', with: cpf
+    fill_in 'cpf', with: cpf
     fill_in 'cliente_contato', with: contato
     fill_in 'cliente_endereco_attributes_cidade', with: cidade
     fill_in 'cliente_endereco_attributes_bairro', with: bairro
@@ -31,7 +31,7 @@ And ('existe um ajudante com o nome de {string}, cpf {string}, contato {string} 
     click_on 'ajudantes'
     click_on 'novo_ajudante'
     fill_in 'ajudante_nome', with: nomeAjudante
-    fill_in 'ajudante_cpf', with: cpf
+    fill_in 'cpf', with: cpf
     fill_in 'ajudante_contato', with: contato
     fill_in 'ajudante_precoMaoDeObra', with: preco
     click_on 'submit'
