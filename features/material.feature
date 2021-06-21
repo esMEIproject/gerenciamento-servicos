@@ -29,4 +29,12 @@ Scenario: Editar Material
   When eu clico em atualizar material
   Then Eu vejo uma mensagem informando que material foi editado com sucesso
 
-
+Scenario: Editar Material com campo materiais menor que o exigido
+  Given existe um usuario ja cadastrado no sistema com o nome 'usuario001', CPF '91352091437', funcao 'Gesseiro' e senha 'password'
+  And estou entrando no sistema com o login '91352091437' e senha 'password'
+  And existe um material com materiais 'Moldura de gesso' , descricao 'Moldura de 5 metros lisa' e preco '40'
+  When eu entro na pagina de visualizar materiais
+  And eu clico em editar o material 'Moldura de gesso' 
+  And eu renomeio o campo materiais para 'Mol'
+  When eu clico em atualizar material
+  Then eu vejo uma mensagem de erro informando que o nome e muito curto

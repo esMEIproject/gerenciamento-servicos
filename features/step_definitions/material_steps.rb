@@ -58,6 +58,10 @@ And('eu renomeio o campo preco para {string}') do |preco|
     fill_in 'material_valor', with: preco
 end
 
+And('eu renomeio o campo materiais para {string}') do |nomeMaterial|
+    fill_in 'material_nome', with: nomeMaterial
+end
+
 When('eu clico em atualizar material') do 
     click_on 'submit'
 end
@@ -68,4 +72,8 @@ end
 
 Then('Eu vejo uma mensagem informando que material foi editado com sucesso') do
     expect(page).to have_content('Material foi atualizado com sucesso')
+end
+
+Then('eu vejo uma mensagem de erro informando que o nome e muito curto') do
+    expect(page).to have_content('Nome é muito curto (mínimo: 4 caracteres)')
 end
