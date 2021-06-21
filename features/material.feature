@@ -6,10 +6,20 @@ Feature: Material
 Scenario: Cadastrar novo Material
   Given existe um usuario ja cadastrado no sistema com o nome 'usuario001', CPF '91352091437', funcao 'Gesseiro' e senha 'password'
   And estou entrando no sistema com o login '91352091437' e senha 'password'
-  When clico em novo material
+  When eu entro na pagina de material
+  And clico em novo material
   When eu preencho os campos com materiais 'Moldura de gesso' , descricao 'Moldura de 5 metros lisa' e preco '40'
   And eu clico em cadastrar material
   Then eu vejo uma mensagem informando que o material foi criado com sucesso
+
+Scenario: Cadastrar Material com campo Preco vazio
+  Given existe um usuario ja cadastrado no sistema com o nome 'usuario001', CPF '91352091437', funcao 'Gesseiro' e senha 'password'
+  And estou entrando no sistema com o login '91352091437' e senha 'password'
+  When eu entro na pagina de material
+  And clico em novo material
+  When eu preencho os campos com materiais 'Moldura de gesso' , descricao 'Moldura de 5 metros lisa' e preco ''
+  And eu clico em cadastrar material
+  Then eu vejo uma mensagem informando que preco nao pode ficar em branco
 
 Scenario: Apagar Material
   Given existe um usuario ja cadastrado no sistema com o nome 'usuario001', CPF '91352091437', funcao 'Gesseiro' e senha 'password'

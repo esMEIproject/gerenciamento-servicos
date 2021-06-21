@@ -14,8 +14,11 @@ Given('estou entrando no sistema com o login {string} e senha {string}') do |cpf
     click_on 'submit'
 end
 
-When('clico em novo material') do
-    visit '/materials'
+When('eu entro na pagina de material') do 
+    click_on 'materials'
+end
+
+And('clico em novo material') do
     click_on 'novo_material'
 end
 
@@ -34,7 +37,7 @@ Then('eu vejo uma mensagem informando que o material foi criado com sucesso') do
 end
 
 And ('existe um material com materiais {string} , descricao {string} e preco {string}') do |nomeMaterial, descricao, preco|
-    visit '/materials'
+    click_on 'materials'
     click_on 'novo_material'
     fill_in 'material_nome', with: nomeMaterial
     fill_in 'material_descricao', with: descricao
@@ -43,7 +46,7 @@ And ('existe um material com materiais {string} , descricao {string} e preco {st
 end
 
 When('eu entro na pagina de visualizar materiais') do
-    visit '/materials'
+    click_on 'materials'
 end
 
 And('eu clico em apagar o material {string}') do |nomeMaterial|
@@ -76,4 +79,8 @@ end
 
 Then('eu vejo uma mensagem de erro informando que o nome e muito curto') do
     expect(page).to have_content('Nome é muito curto (mínimo: 4 caracteres)')
+end
+
+Then ('eu vejo uma mensagem informando que preco nao pode ficar em branco') do
+    expect(page).to have_content('Valor não pode ficar em branco')
 end
