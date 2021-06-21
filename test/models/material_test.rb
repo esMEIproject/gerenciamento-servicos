@@ -7,7 +7,7 @@ class MaterialTest < ActiveSupport::TestCase
 
   test "nao deve salvar Material cadastrado com valor igual a 0" do
     usuario = Usuario.new nome: 'Usuario Teste',
-      cpf: '12345678912',
+      cpf: '39775387485',
       funcao: 'Confeiteiro',
       password: 'password1'
 
@@ -23,7 +23,7 @@ class MaterialTest < ActiveSupport::TestCase
 
   test "deve salvar Material cadastrado corretamente" do
     usuario = Usuario.new nome: 'Usuario Teste',
-      cpf: '12345678912',
+      cpf: '39775387485',
       funcao: 'Confeiteiro',
       password: 'password1'
 
@@ -39,7 +39,7 @@ class MaterialTest < ActiveSupport::TestCase
 
   test "nao deve salvar Material cadastrado com descricao do material menor que o tamanho exigido" do
     usuario = Usuario.new nome: 'Usuario Teste',
-      cpf: '12345678912',
+      cpf: '39775387485',
       funcao: 'Confeiteiro',
       password: 'password1'
 

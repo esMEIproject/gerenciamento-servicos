@@ -7,7 +7,7 @@ class UsuarioTest < ActiveSupport::TestCase
 
   test "deve salvar Usuario criado corretamente" do
     usuario = Usuario.new nome: 'Usuario Teste',
-      cpf: '12345678912',
+      cpf: '39775387485',
       funcao: 'Confeiteiro',
       password: 'password1'
 
@@ -16,7 +16,7 @@ class UsuarioTest < ActiveSupport::TestCase
 
   test "nao deve salvar Usuario com password menor que 8 caracteres" do
     usuario = Usuario.new nome: 'Usuario Teste',
-      cpf: '12345678912',
+      cpf: '39775387485',
       funcao: 'Confeiteiro',
       password: 'passw'
 
@@ -25,9 +25,9 @@ class UsuarioTest < ActiveSupport::TestCase
 
   test "nao deve salvar Usuario criado com cpf com letras" do
     usuario = Usuario.new nome: 'Usuario Teste',
-      cpf: '1234567sasda',
+      cpf: 'sda397753aa',
       funcao: 'Confeiteiro',
-      password: 'passw'
+      password: 'password01'
 
       assert_not usuario.save
   end
