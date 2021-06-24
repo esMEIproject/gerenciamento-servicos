@@ -1,6 +1,8 @@
 Given('existe um usuario com o nome {string}, cpf {string}, funcao {string} e senha {string}') do |nome, cpf, funcao, senha|
     visit '/entrar'
+    expect(page).to have_current_path('/entrar')
     click_on 'Criar Usuário'
+    expect(page).to have_current_path('/usuarios/new')
     fill_in 'usuario_nome', with: nome
     fill_in 'cpf',     with: cpf
     fill_in 'usuario_funcao', with: funcao
@@ -16,10 +18,12 @@ end
 
 When('eu entro na pagina Ajudantes') do
     click_on 'ajudantes'
+    expect(page).to have_current_path('/ajudantes')
 end
 
 And('clico em novo ajudante') do
     click_on 'novo_ajudante'
+    expect(page).to have_current_path('/ajudantes/new')
 end
 
 When('eu preencho os campos de nome {string}, cpf {string}, contato {string} e preco da mao de obra {string}') do |nome, cpf, contato, preco|
@@ -44,12 +48,14 @@ end
 
 And('existe um ajudante com o nome {string}, cpf {string}, contato {string} e preco da mao de obra {string}') do |nome, cpf, contato, preco|
     click_on 'novo_ajudante'
+    expect(page).to have_current_path('/ajudantes/new')
     fill_in 'ajudante_nome', with: nome
     fill_in 'cpf', with: cpf
     fill_in 'ajudante_contato', with: contato
     fill_in 'ajudante_precoMaoDeObra', with: preco
     click_on 'submit'
     click_on 'ajudantes'
+    expect(page).to have_current_path('/ajudantes')
 end
 
 When('eu clico em apagar ajudante {string}') do |nome|

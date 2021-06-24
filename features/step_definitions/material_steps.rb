@@ -1,5 +1,6 @@
 Given('existe um usuario ja cadastrado no sistema com o nome {string}, CPF {string}, funcao {string} e senha {string}') do |nome, cpf, funcao, senha|
     visit '/entrar'
+    expect(page).to have_current_path('/entrar')
     click_on 'Criar Usuário'
     fill_in 'usuario_nome',	with: nome
     fill_in 'cpf',	    with: cpf
@@ -16,10 +17,12 @@ end
 
 When('eu entro na pagina de material') do 
     click_on 'materials'
+    expect(page).to have_current_path('/materials')
 end
 
 And('clico em novo material') do
     click_on 'novo_material'
+    expect(page).to have_current_path('/materials/new')
 end
 
 When('eu preencho os campos com materiais {string} , descricao {string} e preco {string}') do |nomeMaterial, descricao, preco|
@@ -38,7 +41,9 @@ end
 
 And ('existe um material com materiais {string} , descricao {string} e preco {string}') do |nomeMaterial, descricao, preco|
     click_on 'materials'
+    expect(page).to have_current_path('/materials')
     click_on 'novo_material'
+    expect(page).to have_current_path('/materials/new')
     fill_in 'material_nome', with: nomeMaterial
     fill_in 'material_descricao', with: descricao
     fill_in 'material_valor', with: preco
@@ -47,6 +52,7 @@ end
 
 When('eu entro na pagina de visualizar materiais') do
     click_on 'materials'
+    expect(page).to have_current_path('/materials')
 end
 
 And('eu clico em apagar o material {string}') do |nomeMaterial|
