@@ -1,6 +1,6 @@
 Given ('um usuario cadastrado com o nome {string}, cpf {string}, funcao {string} e senha {string} existe') do |nome, cpf, funcao, senha|
     visit '/usuarios/new'
-    #click_on 'criar_usuario'
+    expect(page).to have_current_path('/usuarios/new')
     fill_in 'usuario_nome',	with: nome
     fill_in 'cpf', with: cpf
     fill_in 'usuario_funcao', with: funcao
@@ -16,7 +16,9 @@ end
 
 And ('existe um cliente com o nome de {string}, cpf {string}, contato {string}, cidade {string}, bairro {string}, logradouro {string}, complemento {string}') do |nomeCliente, cpf, contato, cidade, bairro, logradouro, complemento|
     click_on 'clientes'
+    expect(page).to have_current_path('/clientes')
     click_on 'novo_cliente'
+    expect(page).to have_current_path('/clientes/new')
     fill_in 'cliente_nome', with: nomeCliente
     fill_in 'cpf', with: cpf
     fill_in 'cliente_contato', with: contato
@@ -29,7 +31,9 @@ end
 
 And ('existe um ajudante com o nome de {string}, cpf {string}, contato {string} e preco da mao de obra {string}') do |nomeAjudante, cpf, contato, preco|
     click_on 'ajudantes'
+    expect(page).to have_current_path('/ajudantes')
     click_on 'novo_ajudante'
+    expect(page).to have_current_path('/ajudantes/new')
     fill_in 'ajudante_nome', with: nomeAjudante
     fill_in 'cpf', with: cpf
     fill_in 'ajudante_contato', with: contato
@@ -39,7 +43,9 @@ end
 
 And ('um material existe com o nome {string}, descricao {string} e preco {string}') do |nomeMaterial, descricao, preco|
     visit '/materials'
+    expect(page).to have_current_path('/materials')
     click_on 'novo_material'
+    expect(page).to have_current_path('/materials/new')
     fill_in 'material_nome', with: nomeMaterial
     fill_in 'material_descricao', with: descricao
     fill_in 'material_valor', with: preco
@@ -48,7 +54,9 @@ end
 
 When ('eu clico em novo servico') do
     visit '/servicos'
+    expect(page).to have_current_path('/servicos')
     click_on 'novo_servico'
+    expect(page).to have_current_path('/servicos/new')
 end
 
 And ('eu seleciono o cliente {string}, tipo de servico {string}, descricao do servico {string}, seleciono o ajudante {string}, o material {string}, a data {string} de {string} de {string}, valor do servico {string} e status de pagamento {string}') do |cliente, tipoServico, descricao, ajudante, material, dia, mes, ano, preco, status|
@@ -82,7 +90,9 @@ end
 
 And ('existe o servico com cliente {string}, tipo de servico {string}, descricao do servico {string}, seleciono o ajudante {string}, o material {string}, a data {string} de {string} de {string}, valor do servico {string} e status de pagamento {string}') do |cliente, tipoServico, descricao, ajudante, material, dia, mes, ano, preco, status|
     visit '/servicos'
+    expect(page).to have_current_path('/servicos')
     click_on 'novo_servico'
+    expect(page).to have_current_path('/servicos/new')
     select cliente, :from => 'servico_cliente_id'
     fill_in 'servico_tipoDoServico', with: tipoServico
     fill_in 'servico_descricao', with: descricao
@@ -97,6 +107,7 @@ And ('existe o servico com cliente {string}, tipo de servico {string}, descricao
     end
     click_on 'submit'
     visit '/servicos'
+    expect(page).to have_current_path('/servicos')
 end
 
 When('eu clico em apagar o servico {string} do cliente {string}') do |tipoServico, cliente|
