@@ -1,5 +1,6 @@
 Given ('um usuario no sistema com nome {string}, cpf {string}, funcao {string} e senha {string} existe') do |nome, cpf, funcao, senha|
     visit '/usuarios/new'
+    expect(page).to have_current_path('/usuarios/new')
     fill_in 'usuario_nome',	with: nome
     fill_in 'cpf', with: cpf
     fill_in 'usuario_funcao', with: funcao
@@ -8,6 +9,7 @@ Given ('um usuario no sistema com nome {string}, cpf {string}, funcao {string} e
 end
 
 And ('estou logado como usuario com cpf {string} e senha {string}') do |cpf, senha|
+    expect(page).to have_current_path('/entrar')
     fill_in 'cpf',	    with: cpf
     fill_in 'session_password',	with: senha
     click_on 'submit'
@@ -15,10 +17,12 @@ end
 
 When('eu entro na pagina de clientes') do
     click_on 'clientes'
+    expect(page).to have_current_path('/clientes')
 end
 
 And('clico para cadastrar novo cliente') do
     click_on 'novo_cliente'
+    expect(page).to have_current_path('/clientes/new')
 end
 
 When ('eu preencho nome {string}, cpf {string}, contato {string}') do |nome, cpf, contato|
@@ -52,6 +56,7 @@ end
 
 And ('existe um cliente cadastrado como nome {string}, cpf {string}, contato {string}, cidade {string}, bairro {string}, logradouro {string} e complemento {string}') do |nome, cpf, contato, cidade, bairro, logradouro, complemento|
     click_on 'novo_cliente'
+    expect(page).to have_current_path('/clientes/new')
     fill_in 'cliente_nome', with: nome
     fill_in 'cpf', with: cpf
     fill_in 'cliente_contato', with: contato
