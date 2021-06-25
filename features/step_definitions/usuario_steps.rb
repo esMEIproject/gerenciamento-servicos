@@ -1,12 +1,15 @@
 Given('eu estou na pagina de login') do
     visit '/entrar'
+    expect(page).to have_current_path('/entrar')
 end
 
 And('eu clico para cadastrar um novo usuario') do
     click_on 'criar_usuario'
+    expect(page).to have_current_path('/usuarios/new')
 end
 
 When('eu preencho os campos de nome {string}, cpf {string}, funcao {string} e senha {string}') do |nome, cpf, funcao, senha|
+    expect(page).to have_current_path('/usuarios/new')
     fill_in 'usuario_nome',	with: nome
     fill_in 'cpf', with: cpf
     fill_in 'usuario_funcao', with: funcao
@@ -18,7 +21,8 @@ And('eu clico em cadastrar usuario') do
 end
 
 Given('existe um usuario com o nome {string}, cpf {string}, funcao-cargo {string} e senha {string}') do |nome, cpf, funcaocargo, senha|
-    click_on 'Criar Usuário'
+    click_on 'criar_usuario'
+    expect(page).to have_current_path('/usuarios/new')
     fill_in 'usuario_nome',	with: nome
     fill_in 'cpf', with: cpf
     fill_in 'usuario_funcao', with: funcaocargo
@@ -38,6 +42,7 @@ Then('eu vejo uma mensagem informando que nome nao pode ser vazio') do
 end
 
 Given('eu estou logado no sistema com o cpf {string} e senha {string}') do |cpf, senha|
+    expect(page).to have_current_path('/entrar')
     fill_in 'cpf',	    with: cpf
     fill_in 'session_password',	with: senha
     click_on 'submit'

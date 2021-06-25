@@ -1,6 +1,7 @@
 Given('existe um usuario cadastrado com o nome {string}, CPF {string}, funcao {string} e senha {string}') do |nome, cpf, funcao, senha|
     visit '/entrar'
     click_on 'Criar Usuário'
+    expect(page).to have_current_path('/usuarios/new')
     fill_in 'usuario_nome',	with: nome
     fill_in 'cpf',	    with: cpf
     fill_in 'usuario_funcao',	with: funcao
@@ -16,10 +17,12 @@ end
 
 When('eu entro na pagina clientes') do
     click_on 'clientes'
+    expect(page).to have_current_path('/clientes')
 end
 
 And('clico em novo cliente') do
     click_on 'novo_cliente'
+    expect(page).to have_current_path('/clientes/new')
 end
 
 When('eu preencho os campos com nome {string}, cpf {string}, contato {string}, cidade {string}, bairro {string}, logradouro {string} e complemento {string}') do |nome, cpf, contato, cidade, bairro, logradouro, complemento|
@@ -44,6 +47,7 @@ Then('eu vejo uma mensagem de erro informando que o nome nao pode ficar em branc
 end 
 And('existe um cliente com nome {string}, cpf {string}, contato {string}, cidade {string}, bairro {string}, logradouro {string} e complemento {string}') do |nome, cpf, contato, cidade, bairro, logradouro, complemento|
     click_on 'novo_cliente'
+    expect(page).to have_current_path('/clientes/new')
     fill_in 'cliente_nome',	with: nome
     fill_in 'cpf',	with: cpf
     fill_in 'cliente_contato',	with: contato
