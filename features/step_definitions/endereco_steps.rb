@@ -66,6 +66,7 @@ And ('existe um cliente cadastrado como nome {string}, cpf {string}, contato {st
     fill_in 'cliente_endereco_attributes_complemento',	with: complemento
     click_on 'submit'
     visit '/clientes'
+    expect(page).to have_current_path('/clientes')
 end
 
 When ('eu clico em editar o cliente {string}') do |nome|

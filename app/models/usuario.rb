@@ -5,7 +5,7 @@ class Usuario < ApplicationRecord
     has_many :materials, :dependent => :destroy
     
     
-    validates :nome, presence: true,length: {in:8..35}, numericality: false
+    validates :nome, presence: true,length: {in:6..35}, numericality: false
     validates_cpf_format_of :cpf
     validates :cpf, uniqueness: true
     validates :funcao, presence: true, length: {in:5..35}
