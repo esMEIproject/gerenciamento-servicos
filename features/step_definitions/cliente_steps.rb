@@ -1,6 +1,7 @@
 Given('existe um usuario cadastrado com o nome {string}, CPF {string}, funcao {string} e senha {string}') do |nome, cpf, funcao, senha|
     visit '/entrar'
-    click_on 'Criar Usuário'
+    expect(page).to have_current_path('/entrar')
+    click_on 'criar_usuario'
     expect(page).to have_current_path('/usuarios/new')
     fill_in 'usuario_nome',	with: nome
     fill_in 'cpf',	    with: cpf

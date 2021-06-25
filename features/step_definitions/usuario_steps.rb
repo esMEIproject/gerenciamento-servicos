@@ -9,7 +9,6 @@ And('eu clico para cadastrar um novo usuario') do
 end
 
 When('eu preencho os campos de nome {string}, cpf {string}, funcao {string} e senha {string}') do |nome, cpf, funcao, senha|
-    expect(page).to have_current_path('/usuarios/new')
     fill_in 'usuario_nome',	with: nome
     fill_in 'cpf', with: cpf
     fill_in 'usuario_funcao', with: funcao
