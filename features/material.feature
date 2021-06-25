@@ -45,6 +45,6 @@ Scenario: Editar Material com campo materiais menor que o exigido
   And existe um material com materiais 'Moldura de gesso' , descricao 'Moldura de 5 metros lisa' e preco '40'
   When eu entro na pagina de visualizar materiais
   And eu clico em editar o material 'Moldura de gesso' 
-  And eu renomeio o campo materiais para 'Mol'
+  And eu renomeio o campo materiais para 'M'
   When eu clico em atualizar material
   Then eu vejo uma mensagem de erro informando que o nome e muito curto

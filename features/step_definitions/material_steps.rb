@@ -84,7 +84,7 @@ Then('Eu vejo uma mensagem informando que material foi editado com sucesso') do
 end
 
 Then('eu vejo uma mensagem de erro informando que o nome e muito curto') do
-    expect(page).to have_content('Nome é muito curto (mínimo: 4 caracteres)')
+    expect(page).to have_content('Nome é muito curto (mínimo: 3 caracteres)')
 end
 
 Then ('eu vejo uma mensagem informando que preco nao pode ficar em branco') do
