@@ -13,7 +13,7 @@ class ClienteTest < ActiveSupport::TestCase
 
       usuario.save
 
-    cliente = Cliente.new nome: 'Cliente Teste 1',
+    cliente = Cliente.new nome: 'Cliente Teste',
       cpf: '37287511460',
       contato: '45214521',
       endereco_attributes:{ cidade: 'Garanhuns',
@@ -33,7 +33,7 @@ class ClienteTest < ActiveSupport::TestCase
 
       usuario.save
 
-    cliente = Cliente.new nome: 'Cliente Teste 1',
+    cliente = Cliente.new nome: 'Cliente Teste',
       cpf: '37287511460',
       contato: '4521abcd',
       endereco_attributes:{ cidade: 'Garanhuns',
@@ -53,7 +53,7 @@ class ClienteTest < ActiveSupport::TestCase
 
       usuario.save
 
-    cliente = Cliente.new nome: 'Cliente Teste 1',
+    cliente = Cliente.new nome: 'Cliente Teste',
       cpf: '372875114603',
       contato: '45214521',
       endereco_attributes:{ cidade: 'Garanhuns',
@@ -72,7 +72,7 @@ class ClienteTest < ActiveSupport::TestCase
 
       usuario.save
 
-    cliente = Cliente.new nome: 'Cliente Teste 1',
+    cliente = Cliente.new nome: 'Cliente Teste',
       cpf: '12345678900',
       contato: '45214521',
       endereco_attributes:{ cidade: 'Garanhuns',

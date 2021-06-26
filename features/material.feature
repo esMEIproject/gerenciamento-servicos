@@ -4,7 +4,7 @@ Feature: Material
   So that eu nao tenha que fazer isso manualmente
 
 Scenario: Cadastrar novo Material
-  Given existe um usuario ja cadastrado no sistema com o nome 'usuario001', CPF '91352091437', funcao 'Gesseiro' e senha 'password'
+  Given existe um usuario ja cadastrado no sistema com o nome 'Usuario Teste', CPF '91352091437', funcao 'Gesseiro' e senha 'password'
   And estou entrando no sistema com o login '91352091437' e senha 'password'
   When eu entro na pagina de material
   And clico em novo material
@@ -13,7 +13,7 @@ Scenario: Cadastrar novo Material
   Then eu vejo uma mensagem informando que o material foi criado com sucesso
 
 Scenario: Cadastrar Material com campo Preco vazio
-  Given existe um usuario ja cadastrado no sistema com o nome 'usuario001', CPF '91352091437', funcao 'Gesseiro' e senha 'password'
+  Given existe um usuario ja cadastrado no sistema com o nome 'Usuario Teste', CPF '91352091437', funcao 'Gesseiro' e senha 'password'
   And estou entrando no sistema com o login '91352091437' e senha 'password'
   When eu entro na pagina de material
   And clico em novo material
@@ -22,7 +22,7 @@ Scenario: Cadastrar Material com campo Preco vazio
   Then eu vejo uma mensagem informando que preco nao pode ficar em branco
 
 Scenario: Apagar Material
-  Given existe um usuario ja cadastrado no sistema com o nome 'usuario001', CPF '91352091437', funcao 'Gesseiro' e senha 'password'
+  Given existe um usuario ja cadastrado no sistema com o nome 'Usuario Teste', CPF '91352091437', funcao 'Gesseiro' e senha 'password'
   And estou entrando no sistema com o login '91352091437' e senha 'password'
   And existe um material com materiais 'Moldura de gesso' , descricao 'Moldura de 5 metros lisa' e preco '40'
   When eu entro na pagina de visualizar materiais
@@ -30,7 +30,7 @@ Scenario: Apagar Material
   Then eu vejo que o material 'Moldura de gesso' nao se encontra mais na pagina
 
 Scenario: Editar Material
-  Given existe um usuario ja cadastrado no sistema com o nome 'usuario001', CPF '91352091437', funcao 'Gesseiro' e senha 'password'
+  Given existe um usuario ja cadastrado no sistema com o nome 'Usuario Teste', CPF '91352091437', funcao 'Gesseiro' e senha 'password'
   And estou entrando no sistema com o login '91352091437' e senha 'password'
   And existe um material com materiais 'Moldura de gesso' , descricao 'Moldura de 5 metros lisa' e preco '40'
   When eu entro na pagina de visualizar materiais
@@ -40,7 +40,7 @@ Scenario: Editar Material
   Then Eu vejo uma mensagem informando que material foi editado com sucesso
 
 Scenario: Editar Material com campo materiais menor que o exigido
-  Given existe um usuario ja cadastrado no sistema com o nome 'usuario001', CPF '91352091437', funcao 'Gesseiro' e senha 'password'
+  Given existe um usuario ja cadastrado no sistema com o nome 'Usuario Teste', CPF '91352091437', funcao 'Gesseiro' e senha 'password'
   And estou entrando no sistema com o login '91352091437' e senha 'password'
   And existe um material com materiais 'Moldura de gesso' , descricao 'Moldura de 5 metros lisa' e preco '40'
   When eu entro na pagina de visualizar materiais
