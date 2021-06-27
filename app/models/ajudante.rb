@@ -2,7 +2,7 @@ class Ajudante < ApplicationRecord
     has_many :servicos, :dependent => :nullify
     belongs_to :usuario
 
-    validates :nome, presence: true, length: {in:6..35}, numericality: false
+    validates :nome, presence: true, length: {in:6..35}, format: {with: /\A[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+\z/ }
     validates_cpf_format_of :cpf
     validates :cpf, uniqueness: true
     validates :contato, presence: true, length: {in:8..15}, numericality: {only_integer:true}

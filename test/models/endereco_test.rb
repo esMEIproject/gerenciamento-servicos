@@ -12,7 +12,7 @@ class EnderecoTest < ActiveSupport::TestCase
     
     usuario.save
 
-    cliente = Cliente.new nome: 'Cliente Teste 1',
+    cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '37287511460',
     contato: '45214521',
     endereco_attributes:{ cidade: 'Garanhuns',
@@ -32,7 +32,7 @@ class EnderecoTest < ActiveSupport::TestCase
     
     usuario.save
 
-    cliente = Cliente.new nome: 'Cliente Teste 1',
+    cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '37287511460',
     contato: '45214521',
     endereco_attributes:{ cidade: 'Garanhuns',
@@ -52,7 +52,7 @@ class EnderecoTest < ActiveSupport::TestCase
     
     usuario.save
 
-    cliente = Cliente.new nome: 'Cliente Teste 1',
+    cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '37287511460',
     contato: '45214521',
     endereco_attributes:{ cidade: 'Ga',
@@ -70,7 +70,7 @@ class EnderecoTest < ActiveSupport::TestCase
     
     usuario.save
 
-    cliente = Cliente.new nome: 'Cliente Teste 1',
+    cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '37287511460',
     contato: '45214521',
     endereco_attributes:{ cidade: 'Ga',
@@ -89,7 +89,7 @@ class EnderecoTest < ActiveSupport::TestCase
     
     usuario.save
 
-    cliente = Cliente.new nome: 'Cliente Teste 1',
+    cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '37287511460',
     contato: '45214521',
     endereco_attributes:{ cidade: 'Garanhuns',
@@ -108,7 +108,7 @@ class EnderecoTest < ActiveSupport::TestCase
     
     usuario.save
 
-    cliente = Cliente.new nome: 'Cliente Teste 1',
+    cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '37287511460',
     contato: '45214521',
     endereco_attributes:{bairro: 'Boa Vista',
