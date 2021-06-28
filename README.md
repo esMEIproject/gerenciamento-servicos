@@ -9,7 +9,7 @@ O projeto possui um cliente, autonomo MEI (MicroEmpreendedor Individual), que es
 *   [Site no Heroku](https://gerenciamento-servicos.herokuapp.com) :robot:
 
 ## :round_pushpin: Objetivos
-O cliente deve ser capaz de fazer o cadastramento dos seus dados pessoais, tais como Nome Completo, CPF/CNPJ, qual a sua ocupação e uma senha para ter acesso ao sistema. Ele também deve ser capaz de cadastrar os serviços, vinculando cada serviço a um cliente, que possuirá seus respectivos dados e seu endereço. Cada serviço poderá ter ou não materiais vinculados a si, e ter ou não um ajudante em cada serviço. Após o cadastro de todos os dados necessários, o cliente poderá vizualizar os seus serviços, quais serão realizados, os que foram ou não pagos, e com isso possuir uma maneira eficiente de vizualizar serviços.
+O cliente deve ser capaz de fazer o cadastramento dos seus dados pessoais, tais como Nome Completo, CPF, qual a sua ocupação e uma senha para ter acesso ao sistema. Ele também deve ser capaz de cadastrar os serviços, vinculando cada serviço a um cliente, que possuirá seus respectivos dados e seu endereço. Cada serviço poderá ter ou não materiais vinculados a si, e ter ou não um ajudante em cada serviço. Após o cadastro de todos os dados necessários, o cliente poderá vizualizar os seus serviços, quais serão realizados, os que foram ou não pagos, e com isso possuir uma maneira eficiente de vizualizar serviços.
 ## :hammer_and_wrench: Tecnologias Usadas
  ### [Ruby](https://www.ruby-lang.org/pt/)
 *   Versão 2.7.3
