@@ -10,7 +10,7 @@ class AjudanteTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
 
-    usuario.save
+    assert usuario.save
 
     ajudante = Ajudante.new nome: 'Ajudante Teste',
     cpf: '33940570001',
@@ -27,7 +27,7 @@ class AjudanteTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
 
-    usuario.save
+    assert usuario.save
 
     ajudante = Ajudante.new nome: 'Ajudante Teste',
     cpf: '3394057000a',
@@ -44,7 +44,7 @@ class AjudanteTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
 
-    usuario.save
+    assert usuario.save
 
     ajudante = Ajudante.new nome: 'Ajudante Teste',
     cpf: '33940570001',
@@ -63,7 +63,7 @@ class AjudanteTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
 
-    usuario.save
+    assert usuario.save
 
     ajudante = Ajudante.new nome: '',
     cpf: '33940570001',
@@ -80,7 +80,7 @@ class AjudanteTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
 
-    usuario.save
+    assert usuario.save
 
     ajudante = Ajudante.new nome: 'Ajudante Teste',
     cpf: '33940570001',
@@ -97,7 +97,7 @@ class AjudanteTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
 
-    usuario.save
+    assert usuario.save
 
     ajudante = Ajudante.new nome: 'Ajudante Teste',
     cpf: '33940570001',
@@ -105,7 +105,7 @@ class AjudanteTest < ActiveSupport::TestCase
     precoMaoDeObra: '400',
     usuario_id: usuario.id
 
-    ajudante.save
+    assert ajudante.save
 
     ajudante2 = Ajudante.new nome: 'Ajudante II',
     cpf: '33940570001',
