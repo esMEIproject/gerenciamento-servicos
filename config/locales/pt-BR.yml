@@ -88,9 +88,32 @@ pt-BR:
         servico:            
           attributes:
             cliente:
-              required: 'deve existir!'
+              required: 'deve existir!' 
             data:
               on_or_after: 'deve ser depois ou durante o dia atual'
-            
+    attributes:
+      cliente:
+        cpf: 'CPF'
+      endereco:
+        cidade: 'Cidade'
+        bairro: 'Bairro'
+        logradouro: 'Logradouro'
+        complemento: 'Complemento'
+      ajudante:
+        cpf: 'CPF'
+        precoMaoDeObra: 'Preço da Mão de Obra'
+      usuario:
+        cpf: 'CPF'
+        funcao: 'A Função/Cargo'
+        password: 'Senha'
+      material:
+        nome: 'Nome do Material'
+        descricao: 'Descrição'
+        valor: 'O valor do material'
+      servico:
+        tipoDoServico: 'O tipo do Serviço'
+        descricao: 'A descrição'
+        data: 'A data do Serviço'
+        valorDoServico: 'O valor'
 
                 
