@@ -83,5 +83,5 @@ Then('eu vejo que o ajudante com nome {string} nao se encontra mais na pagina') 
 end
 
 Then('eu vejo que o cpf digitado ja esta em uso') do
-    expect(page).to have_content('Cpf já está em uso')
+    expect(page).to have_content('CPF já está em uso')
 end

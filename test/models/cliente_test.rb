@@ -11,7 +11,7 @@ class ClienteTest < ActiveSupport::TestCase
       funcao: 'Confeiteiro',
       password: 'password1'
 
-      usuario.save
+      assert usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
       cpf: '37287511460',
@@ -31,7 +31,7 @@ class ClienteTest < ActiveSupport::TestCase
       funcao: 'Confeiteiro',
       password: 'password1'
 
-      usuario.save
+      assert usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
       cpf: '37287511460',
@@ -51,7 +51,7 @@ class ClienteTest < ActiveSupport::TestCase
       funcao: 'Confeiteiro',
       password: 'password1'
 
-      usuario.save
+      assert usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
       cpf: '372875114603',
@@ -70,7 +70,7 @@ class ClienteTest < ActiveSupport::TestCase
       funcao: 'Confeiteiro',
       password: 'password1'
 
-      usuario.save
+      assert usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
       cpf: '12345678900',
@@ -89,7 +89,7 @@ class ClienteTest < ActiveSupport::TestCase
       funcao: 'Confeiteiro',
       password: 'password1'
 
-      usuario.save
+      assert usuario.save
 
     cliente = Cliente.new nome: '',
       cpf: '37287511460',
@@ -108,7 +108,7 @@ class ClienteTest < ActiveSupport::TestCase
       funcao: 'Confeiteiro',
       password: 'password1'
 
-      usuario.save
+      assert usuario.save
 
     cliente = Cliente.new nome: '',
       cpf: '37287511460',

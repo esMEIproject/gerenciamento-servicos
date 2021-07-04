@@ -85,7 +85,7 @@ Then ('eu vejo uma mensagem informando que cliente deve existir') do
 end
 
 Then ('eu vejo mensagem informando que data deve ser depois ou durante o dia atual') do
-    expect(page).to have_content('Data deve ser depois ou durante o dia atual')
+    expect(page).to have_content('A data do Serviço deve ser depois ou durante o dia atual')
 end
 
 And ('existe o servico com cliente {string}, tipo de servico {string}, descricao do servico {string}, seleciono o ajudante {string}, o material {string}, a data {string} de {string} de {string}, valor do servico {string} e status de pagamento {string}') do |cliente, tipoServico, descricao, ajudante, material, dia, mes, ano, preco, status|

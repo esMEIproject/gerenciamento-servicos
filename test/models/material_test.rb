@@ -11,7 +11,7 @@ class MaterialTest < ActiveSupport::TestCase
       funcao: 'Confeiteiro',
       password: 'password1'
 
-      usuario.save
+      assert usuario.save
 
     material = Material.new nome: 'Massa de Chocolate',
       descricao: 'Chocolate meio amargo sem lactose',
@@ -27,7 +27,7 @@ class MaterialTest < ActiveSupport::TestCase
       funcao: 'Confeiteiro',
       password: 'password1'
 
-      usuario.save
+      assert usuario.save
 
     material = Material.new nome: 'Massa de Chocolate',
       descricao: 'Chocolate meio amargo sem lactose',
@@ -43,7 +43,7 @@ class MaterialTest < ActiveSupport::TestCase
       funcao: 'Confeiteiro',
       password: 'password1'
 
-      usuario.save
+      assert usuario.save
 
     material = Material.new nome: 'Massa de Chocolate',
       descricao: 'Ch',
@@ -60,7 +60,7 @@ class MaterialTest < ActiveSupport::TestCase
       funcao: 'Confeiteiro',
       password: 'password1'
 
-      usuario.save
+      assert usuario.save
 
     material = Material.new nome: 'Ma',
       descricao: 'Chocolate meio amargo sem lactose',
@@ -76,7 +76,7 @@ class MaterialTest < ActiveSupport::TestCase
       funcao: 'Confeiteiro',
       password: 'password1'
 
-      usuario.save
+      assert usuario.save
 
     material = Material.new nome: 'Massa de Chocolate',
       descricao: 'Chocolate meio amargo sem lactose',
@@ -92,7 +92,7 @@ class MaterialTest < ActiveSupport::TestCase
       funcao: 'Confeiteiro',
       password: 'password1'
 
-      usuario.save
+      assert usuario.save
 
     material = Material.new nome: 'Massa de Chocolate da cacaushow com açucar refinado branco',
       descricao: 'Chocolate meio amargo sem lactose',
