@@ -10,13 +10,8 @@ class SessionsController < ApplicationController
       sign_in(usuario)
       redirect_to servicos_path(usuario)#tem que mudar 
     else
-      if(!usuario)
-        flash.now[:danger] = "Usuario não existe."
-        render 'new'
-      else
-        flash.now[:danger] = "Senha Inválida."
-        render 'new'
-      end
+      !usuario ? flash.now[:danger] = "Usuario não existe." : flash.now[:danger] = "Senha Inválida."
+      render 'new'
     end
   end
 
