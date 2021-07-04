@@ -10,7 +10,7 @@ class EnderecoTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
     
-    usuario.save
+    assert usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '37287511460',
@@ -30,7 +30,7 @@ class EnderecoTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
     
-    usuario.save
+    assert usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '37287511460',
@@ -50,7 +50,7 @@ class EnderecoTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
     
-    usuario.save
+    assert usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '37287511460',
@@ -68,7 +68,7 @@ class EnderecoTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
     
-    usuario.save
+    assert usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '37287511460',
@@ -87,7 +87,7 @@ class EnderecoTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
     
-    usuario.save
+    assert usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '37287511460',
@@ -106,7 +106,7 @@ class EnderecoTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
     
-    usuario.save
+    assert usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '37287511460',

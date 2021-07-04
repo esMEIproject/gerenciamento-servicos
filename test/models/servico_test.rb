@@ -10,7 +10,7 @@ class ServicoTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
     
-    usuario.save
+    assert usuario.save
     
     ajudante = Ajudante.new nome: 'Ajudante Teste',
     cpf: '88217414009',
@@ -18,7 +18,7 @@ class ServicoTest < ActiveSupport::TestCase
     precoMaoDeObra: '400',
     usuario_id: usuario.id
 
-    ajudante.save
+    assert ajudante.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '62577993099',
@@ -29,14 +29,14 @@ class ServicoTest < ActiveSupport::TestCase
     complemento: 'Apartamento 112'},
     usuario_id: usuario.id
   
-    cliente.save
+    assert cliente.save
 
     material = Material.new nome: 'Gesso',
     descricao: '2 sacos de gesso liso',
     valor: '1000',
     usuario_id: usuario.id
     
-    material.save
+    assert material.save
 
     servico = Servico.new cliente_id: cliente.id,
     tipoDoServico: 'Colocar forro de Gesso',
@@ -57,7 +57,7 @@ class ServicoTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
     
-    usuario.save
+    assert usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '62577993099',
@@ -68,14 +68,14 @@ class ServicoTest < ActiveSupport::TestCase
     complemento: 'Apartamento 112'},
     usuario_id: usuario.id
   
-    cliente.save
+    assert cliente.save
 
     material = Material.new nome: 'Gesso',
     descricao: '2 sacos de gesso liso',
     valor: '1000',
     usuario_id: usuario.id
     
-    material.save
+    assert material.save
 
     servico = Servico.new cliente_id: cliente.id,
     tipoDoServico: 'Colocar forro de Gesso',
@@ -96,7 +96,7 @@ class ServicoTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
     
-    usuario.save
+    assert usuario.save
     
     ajudante = Ajudante.new nome: 'Ajudante Teste',
     cpf: '88217414009',
@@ -104,14 +104,14 @@ class ServicoTest < ActiveSupport::TestCase
     precoMaoDeObra: '400',
     usuario_id: usuario.id
 
-    ajudante.save
+    assert ajudante.save
 
     material = Material.new nome: 'Gesso',
     descricao: '2 sacos de gesso liso',
     valor: '1000',
     usuario_id: usuario.id
     
-    material.save
+    assert material.save
 
     servico = Servico.new cliente_id: nil,
     tipoDoServico: 'Colocar forro de Gesso',
@@ -134,7 +134,7 @@ class ServicoTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
     
-    usuario.save
+    assert usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '62577993099',
@@ -145,7 +145,7 @@ class ServicoTest < ActiveSupport::TestCase
     complemento: 'Apartamento 112'},
     usuario_id: usuario.id
   
-    cliente.save
+    assert cliente.save
     
     ajudante = Ajudante.new nome: 'Ajudante Teste',
     cpf: '88217414009',
@@ -153,7 +153,7 @@ class ServicoTest < ActiveSupport::TestCase
     precoMaoDeObra: '400',
     usuario_id: usuario.id
 
-    ajudante.save
+    assert ajudante.save
 
     servico = Servico.new cliente_id: cliente.id,
     tipoDoServico: 'Colocar forro de Gesso',
@@ -174,7 +174,7 @@ class ServicoTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
     
-    usuario.save
+    assert usuario.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '62577993099',
@@ -185,7 +185,7 @@ class ServicoTest < ActiveSupport::TestCase
     complemento: 'Apartamento 112'},
     usuario_id: usuario.id
   
-    cliente.save
+    assert cliente.save
     
     ajudante = Ajudante.new nome: 'Ajudante Teste',
     cpf: '88217414009',
@@ -193,7 +193,7 @@ class ServicoTest < ActiveSupport::TestCase
     precoMaoDeObra: '400',
     usuario_id: usuario.id
 
-    ajudante.save
+    assert ajudante.save
 
     servico = Servico.new cliente_id: cliente.id,
     tipoDoServico: 'Colocar forro de Gesso',
@@ -214,7 +214,7 @@ class ServicoTest < ActiveSupport::TestCase
     funcao: 'Gesseiro',
     password: 'password1'
     
-    usuario.save
+    assert usuario.save
     
     ajudante = Ajudante.new nome: 'Ajudante Teste',
     cpf: '88217414009',
@@ -222,7 +222,7 @@ class ServicoTest < ActiveSupport::TestCase
     precoMaoDeObra: '400',
     usuario_id: usuario.id
 
-    ajudante.save
+    assert ajudante.save
 
     cliente = Cliente.new nome: 'Cliente Teste',
     cpf: '62577993099',
@@ -233,14 +233,14 @@ class ServicoTest < ActiveSupport::TestCase
     complemento: 'Apartamento 112'},
     usuario_id: usuario.id
   
-    cliente.save
+    assert cliente.save
 
     material = Material.new nome: 'Gesso',
     descricao: '2 sacos de gesso liso',
     valor: '1000',
     usuario_id: usuario.id
     
-    material.save
+    assert material.save
 
     servico = Servico.new cliente_id: cliente.id,
     tipoDoServico: 'Colocar forro de Gesso',
