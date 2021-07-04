@@ -34,7 +34,7 @@ Then('eu vejo uma mensagem que usuario foi cadastrado corretamente') do
 end
 
 Then('eu vejo uma mensagem informando que cpf nao e valido') do
-    expect(page).to have_content('Cpf não é um CPF válido')
+    expect(page).to have_content('CPF não é um CPF válido')
 end
 Then('eu vejo uma mensagem informando que nome nao pode ser vazio') do
     expect(page).to have_content('Nome não pode ficar em branco')
@@ -65,13 +65,13 @@ And('eu clico em atualizar usuario') do
 end
 
 Then('eu vejo uma mensagem informando que cpf deve ter apenas numeros') do
-    expect(page).to have_content('Cpf deve ser um número')
+    expect(page).to have_content('CPF deve ser um número')
 end
 
 Then('eu vejo uma mensagem informando que cpf ja existe') do
-    expect(page).to have_content('Cpf já está em uso')
+    expect(page).to have_content('CPF já está em uso')
 end
 
 Then('eu vejo uma mensagem informando que cpf nao pode ser vazio') do
-    expect(page).to have_content('Cpf não pode ficar em branco')
+    expect(page).to have_content('CPF não pode ficar em branco')
 end

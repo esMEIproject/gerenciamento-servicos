@@ -47,11 +47,11 @@ Then('eu vejo uma mensagem que cliente foi criado com sucesso') do
 end
 
 Then('eu vejo uma mensagem informando que cidade nao pode ser em branco') do
-    expect(page).to have_content('Endereco cidade não pode ficar em branco')
+    expect(page).to have_content('Cidade não pode ficar em branco')
 end
 
 Then('eu vejo uma mensagem informando que campo bairro e muito curto') do
-    expect(page).to have_content('Endereco bairro é muito curto (mínimo: 4 caracteres)')
+    expect(page).to have_content('Bairro é muito curto (mínimo: 4 caracteres)')
 end
 
 And ('existe um cliente cadastrado como nome {string}, cpf {string}, contato {string}, cidade {string}, bairro {string}, logradouro {string} e complemento {string}') do |nome, cpf, contato, cidade, bairro, logradouro, complemento|
@@ -86,5 +86,5 @@ Then ('eu vejo uma mensagem que cliente foi atualizado corretamente') do
 end
 
 Then('eu vejo uma mensagem que informando que campo cidade e muito longo') do
-    expect(page).to have_content('Endereco cidade é muito longo (máximo: 35 caracteres)')
+    expect(page).to have_content('Cidade é muito longo (máximo: 35 caracteres)')
 end

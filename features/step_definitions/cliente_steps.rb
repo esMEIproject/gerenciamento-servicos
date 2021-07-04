@@ -79,7 +79,7 @@ Then('eu vejo uma mensagem informando que o cliente foi atualizado') do
     expect(page).to have_content('Cliente foi atualizado com sucesso')
 end
 Then('eu vejo uma mensagem de erro informando que o cpf ja existe') do
-    expect(page).to have_content('Cpf já está em uso')
+    expect(page).to have_content('CPF já está em uso')
 end
 
 When('clico em apagar cliente com o nome {string}') do |cliente|
