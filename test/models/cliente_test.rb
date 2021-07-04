@@ -1,9 +1,7 @@
 require "test_helper"
 
 class ClienteTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
 
   test "deve salvar Cliente cadastrado corretamente" do
     usuario = Usuario.new nome: 'Usuario Teste',

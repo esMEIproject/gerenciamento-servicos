@@ -1,9 +1,7 @@
 require "test_helper"
 
 class EnderecoTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+ 
   test "Deve salvar um endereco cadastrado corretamente" do
     usuario = Usuario.new nome: 'Usuario Teste',
     cpf: '39775387485',

@@ -1,9 +1,7 @@
 require "test_helper"
 
 class MaterialTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+ 
 
   test "nao deve salvar Material cadastrado com valor igual a 0" do
     usuario = Usuario.new nome: 'Usuario Teste',
