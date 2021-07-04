@@ -5,11 +5,6 @@ class UsuariosControllerTest < ActionDispatch::IntegrationTest
     @usuario = usuarios(:one)
   end
 
-  test "should get index" do
-    get usuarios_url
-    assert_response :success
-  end
-
   test "should get new" do
     get new_usuario_url
     assert_response :success
