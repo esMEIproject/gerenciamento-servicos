@@ -16,7 +16,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
-*{
+* {
   font-family: 'Ubuntu', sans-serif;
 }
 
@@ -35,7 +35,7 @@ nav {
   position: fixed;
   justify-content: space-between;
   padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 3px 0;
 }
 
 .ul2 {
@@ -53,7 +53,7 @@ a:link {
   text-decoration: none;
 }
 
-.delete{
+.delete {
   background-color: red;
 }
 
@@ -84,6 +84,7 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 textarea {
   width: 30%;
   margin-top: 7px;
