@@ -27,7 +27,7 @@
         <td><%= cliente.endereco.complemento %></td>
         <td><%= link_to 'Visualizar', cliente, id:"s-#{cliente.nome}" %></td>
         <td><%= link_to 'Editar', edit_cliente_path(cliente), id:"e-#{cliente.nome}" %></td>
-        <td><%= link_to 'Apagar', cliente, method: :delete, id:"d-#{cliente.nome}" %></td>
+        <td><%= link_to 'Apagar', cliente, method: :delete, id:"d-#{cliente.nome}", class:"delete" %></td>
       </tr>
     <% end %>
   </tbody>

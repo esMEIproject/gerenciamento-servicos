@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*{
+font-family: 'Ubuntu', sans-serif;
+}
+
 body {
-  background-color: #fff;
   color: #000;
   margin: 33px;
 }
@@ -9,7 +14,6 @@ p,
 ol,
 ul,
 td {
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
@@ -54,21 +58,20 @@ div.actions {
 }
 
 .field_with_errors {
-  background-color: red;
-  display: table;
+  border: none;
+  border-bottom: 2px solid red;
 }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
-  padding: 7px 7px 0;
+  box-shadow: #9d02076c 5px 5px, #d0000071 10px 10px, #dc2e0270 15px 15px;
+  padding: 7px 7px 2px;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: #faf9f9;
 }
 
 #error_explanation h2 {
   text-align: left;
-  font-weight: bold;
   padding: 5px 5px 5px 15px;
   font-size: 12px;
   margin: -7px -7px 0;
@@ -78,7 +81,7 @@ div.actions {
 
 #error_explanation ul li {
   font-size: 12px;
-  list-style: square;
+  list-style: circle;
 }
 
 label {

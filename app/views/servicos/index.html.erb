@@ -42,7 +42,7 @@
         <% end %>
         <td><%= link_to 'Visualizar', servico, id:"s-#{servico.cliente.nome + servico.tipoDoServico}" %></td>
         <td><%= link_to 'Editar', edit_servico_path(servico), id:"e-#{servico.cliente.nome + servico.tipoDoServico}" %></td>
-        <td><%= link_to 'Apagar', servico, method: :delete, id:"d-#{servico.cliente.nome + servico.tipoDoServico}" %></td>
+        <td><%= link_to 'Apagar', servico, method: :delete, id:"d-#{servico.cliente.nome + servico.tipoDoServico}", class:"delete" %></td>
       </tr>
     <% end %>
   </tbody>
