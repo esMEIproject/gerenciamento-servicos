@@ -19,7 +19,7 @@
         <td><%= material.valor %></td>
         <td><%= link_to 'Visualizar', material, id:"s-#{material.nome}" %></td>
         <td><%= link_to 'Editar', edit_material_path(material), id:"e-#{material.nome}" %></td>
-        <td><%= link_to 'Apagar', material, method: :delete, id:"d-#{material.nome}" %></td>
+        <td><%= link_to 'Apagar', material, method: :delete, id:"d-#{material.nome}", class:"delete" %></td>
       </tr>
     <% end %>
   </tbody>

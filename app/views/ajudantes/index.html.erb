@@ -21,7 +21,7 @@
         <td><%= ajudante.precoMaoDeObra %></td>
         <td><%= link_to 'Visualizar', ajudante, id:"s-#{ajudante.nome}" %></td>
         <td><%= link_to 'Editar', edit_ajudante_path(ajudante), id:"e-#{ajudante.nome}" %></td>
-        <td><%= link_to 'Apagar', ajudante, method: :delete, id:"d-#{ajudante.nome}" %></td>
+        <td><%= link_to 'Apagar', ajudante, method: :delete, id:"d-#{ajudante.nome}", class:"delete" %></td>
       </tr>
     <% end %>
   </tbody>

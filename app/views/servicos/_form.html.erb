@@ -14,6 +14,7 @@
   <div class="field">
     <%= form.label :nome, 'Cliente' %>
     <%= collection_select(:servico, :cliente_id, Cliente.where(usuario_id: current_usuario.id), :id, :nome, {:prompt => 'Selecione'}) %>
+    <%= link_to 'Cadastrar novo cliente', new_cliente_path %>
   </div>
 
   <div class="field">
@@ -28,12 +29,14 @@
 
   <div class="field">
     <%= form.label :ajudante, 'Ajudante' %>
-    <%= form.collection_select(:ajudante_id, Ajudante.where(usuario_id: current_usuario.id), :id, :nome, {:prompt => 'Não possui'}) %>          
+    <%= form.collection_select(:ajudante_id, Ajudante.where(usuario_id: current_usuario.id), :id, :nome, {:prompt => 'Não possui'}) %>
+    <%= link_to 'Cadastrar novo ajudante', new_ajudante_path %>
   </div>
 
   <div class="field">
     <%= form.label :material, 'Material' %>
-    <%= form.collection_select(:material_id, Material.where(usuario_id: current_usuario.id), :id, :nome, {:prompt => 'Não possui'}) %>          
+    <%= form.collection_select(:material_id, Material.where(usuario_id: current_usuario.id), :id, :nome, {:prompt => 'Não possui'}) %>
+    <%= link_to 'Cadastrar novo material', new_material_path %>
   </div>
 
   <div class="field">
@@ -43,7 +46,7 @@
 
   <div class="field">
     <%= form.label :valorDoServico, 'Valor do Serviço' %>
-    <%= form.text_field :valorDoServico %>
+    <%= form.text_field :valorDoServico, placeholder: 'Somente números'%>
   </div>
 
   <div class="field">
