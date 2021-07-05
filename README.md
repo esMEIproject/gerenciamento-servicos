@@ -19,6 +19,6 @@ O cliente deve ser capaz de fazer o cadastramento dos seus dados pessoais, tais 
  ### [Travis CI](https://travis-ci.org/)
  ### [Heroku](https://www.heroku.com/)
 ## :construction: Status do Projeto
-Em andamento
+Finalizado
 ## :keyboard: Acessando o sistema
 Você poderá fazer Login no sistema com o CPF *73387181485* e Senha *admin@2021*
